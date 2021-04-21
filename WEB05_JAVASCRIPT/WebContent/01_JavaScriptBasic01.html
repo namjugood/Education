@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+- 자바 스크립트 : HTML로 진행되는 마크업 작업이외에 서버와의 통신 없이 웹페이지에 쓸 수 있는 동적 코딩들을
+  통틀어서 스크립트 언어라고 하며, 그 중 자바 문법을 베이스로 한 스크립트 언어를 자바 스크립트라고 합니다.
+- HTML의 마크업 기능으로는 해결할 수 없는 설정(속성값 변경)과 조정(메서드 호출)들을 할 수 있습니다.
+- 위에서 언급한 속성과 메서드는 주로 웹 브라우저나 웹페이지 그리고 웹페이지 내의 내용(태그)들을 대상으로 
+  하는 속성과 메서드입니다. 
+  
+- 자바 스크립트로 할 수 있는 일
+    1. 자바 문법을 기초로한 문자 또는 숫자의 연산
+    2. 브라우저 속성(크기-좌우, 상하 등, 버전, 히스토리, 로케이션 등)의 변경
+    3. 태그의 조작(속성, 메소드 이용)을 통한 애니메이션
+    4. 태그의 조작을 통한 태그의 위치 및 CSS의 속성값 조작
+    5. 태그의 조작을 통한 입력값의 유효성 검사 등
+    6. 모든 조작은 페이지가 화면에 표시되고 난 후에도 가능합니다.
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Basic 01</title>
+<style type="text/css">
+    /*스타일시트(CSS) 주석문 기호*/
+</style>
+<script type="text/javascript">
+    /* 자바스크립트 주석문 기호 1 - 멀티라인 주석 */
+    // 자바스크립트 주석문 기호 2 - 단일라인 주석
+    
+    /* 1. 출력 
+    alert("Hello, JavaScript") */
+    
+    /* 2. 문자자료형
+    - Java와 달리 JavaScript의 문자자료형은 작은 따옴표와 큰따옴표를 모두 문자자료로 사용합니다.(char와 String의 구분이 없습니다.)
+    - 작은따옴표로 묶어도 문자자료, 큰따옴표로 묶어도 문자자료로 인식합니다.
+    - 다만 그 둘을 혼용하여 사용할 수는 없습니다.("Java Script' 잘못된 사용
+    - 인용구분의 사용도 작은 따옴표와 큰따옴표의 구분은 없습니다.('Hello "JavaScript"...' 바른사용, "Hello 'JavaScript'...' 바른사용)
+    - 큰 따옴표나 작은 따옴표로만 인용구문 표기를 하고 싶다면 이스케이프문자 "\"를 사용합니다.
+    * 이스케이프 문자들: \n, \', \t, \\
+     
+    alert('Hello, JavaScript ... \n 작은따옴표');
+    alert("Hello, JavaScript ... \n 큰따옴표");
+    alert("Hello, 'JavaScript' ... \n 혼합된 사용1");
+    alert('Hello, "JavaScript" ... \n 혼합된 사용2');
+    alert("Hello, \"JavaScript\" ... \n 이스케이프 문자 사용");*/
+    
+    /* 3. 자료형
+    - JavaScript의 숫자자료는 정수와 실수만 구분하고, 이외의 요소들은 구분없이 사용합니다.
+    
+    alert(273);
+    alert(3.14);*/
+    
+    /*4. 산술연산자 : +, -, *, /, %
+    - 일반적인 산술연사자는 똑같이 사용됩니다. 다만, 정수와 정수끼리의 나눗셈 연산의 정수결과가 나오는 것이 아니라 실수결과로 출력되는 것만 다릅니다.
+    alert('27+35=' + (27+35));
+    alert('27-35=' + (27-35));
+    alert('27*35=' + (27*35));
+    alert('27/35=' + (27/35));  // 자바 결과와의 차이
+    alert('27%35=' + (27%35));
+    */
+    
+    /* 5. 비교연산자 : >, <, <=, >=, ==, !=
+       6. 논리연산자 : &&, ||, !
+    alert('52<135 && 45<78=>' + (52>135>&&45<78);
+    // 52가 135보다 크면서, 45가 78보다 작다 -> FALSE
+    alert('52<135 || 45<78=>' + (52>135>||45<78);
+    // 52가 135보다 크거나, 45가 78보다 작다 -> TRUE
+    alert('!(52>135) =>' + (!(52>135)) );
+    // 52는 135보다 크지 않다 -> TRUE*/
+    
+    /* 7. 변수
+    - 자바스크립트의 변수선언
+    var a = 10;
+    - 모든 변수는 var라는 선언 명령으로 생성합니다.
+    - 변수의 자료형은 현재 저장되어있는 자료형에 따라 바뀝니다.
+    - a 변수에 10이라는 값을 저장해서 정수형 변수가 되어있다가도, 이후에 123.123이라는 값은 a변수에 대입하면 a변수는 실수형이 됩니다.
+    - 변수는 1개지만 자료형을 바꿔가며 재활용이 가능합니다.
+    var radius=10; //정수
+    var pi = 3.14; //실수
+    alert(pi);
+    alert(2*pi*radius); //원의 둘레 길이
+    var varChar="Hello World..."; //문자
+    var booleanType = true; //boolean
+    pi="Hello World...";
+    alert(pi);
+    alert(2*pi*radius); //문자와 숫자 자료의 산술연산의 결과는 NaN */
+    
+    /*
+    // 자바스크립트의 변수는 함수도 저장가능합니다.
+    // 자바스크립트는 평소 사용하는 함수가 자바의 스태틱 함수(메서드)이며 생성 후 자유롭게 호출하여 사용합니다. 또한 다음과 같이 만들어지는 함수를 변수에 담아서 사용하기도 합니다.
+    var functionVar = function(){}; //함수
+    
+    // 자바스크립트에도 객체가 존재합니다. 하나의 변수 안에 여러 속성(멤버변수) & 멤버 메서드들을 생성해놓고 객체지향 프로그래밍을 할 수 있습니다.
+    var objectVar={}; //객체
+    */
+    
+    /* 8. 복합 대입 연산자 : +=, -=, *=, /=, %= 
+    var value=10;
+    value+=10; //value=value+10;
+    alert(value);
+    
+    var value=20;
+    value -= "world";
+    alert(value); //NaN(Not a Number)*/
+    
+    /* 9. 증감연산자 
+    var number=10;
+    alert(++number + 5); //number 값 10에서 11로 변경 후 +5 연산실행
+    alert(--number + 5); //number 값 11에서 10로 변경 후 +5 연산실행
+    alert(number++ + 5); //number 값 10에 +5 연산실행 후 10에서 11로 변경
+    alert(number-- + 5); //number 값 11에 +5 연산실행 후 11에서 10로 변경*/
+    
+    /* 10. 변수의 특징과 변수들간의 연산
+    - 변수는 가장 마지막에 대입한 값을 기억합니다.
+    - 문자들간의 +연산은 이어붙이기 연산입니다.
+    - 문자와 숫자간의+연산도 이어붙이기 연산이 되어 최종 문자결과가 만들어집니다. 
+    
+    var cup = 'Coffee';
+    cup='Green Tea';
+    cup='Water';
+    alert('Drink '+cup+'...!!!');
+    
+    var number=10;
+    alert('숫자 값 : '+number); */
+    
+    /* 11. 자료형 검사 
+    // 문자열
+    alert(typeof('홍길동')); // string- char자료 string으로 통합
+    // 숫자
+    alert(typeof(150)); // number - 정수, 실수도 number로 통합
+    alert(typeof(3.14)); // number
+    //boolean
+    alert(typeof(true)); // boolean
+    // 함수
+    alert(typeof(function(){})); // function
+    // 객체
+    alert(typeof( {} )); // object
+    // Undefined
+    alert(typeof(number)); // undefined - 변수의 선언 없이 자료형이 아직 결정 전
+    number2='123'; // 자바스크립트는 특별한 변수 선언 없이 변수사용이 가능합니다.
+    // 가능한 한 변수는 선언 후 사용하는 것을 권장
+    alert(typeof(number2)); // string */
+    
+    /* 12. 입력 
+    var input = prompt('이름을 입력하세요.', '두 글자 이상 입력');
+    // 괄호안의 첫 번째 텍스트 = 상자안에 표시될 안내문
+    // 괄호안의 두 번째 텍스트 = 입력란에 미리 입력되고 블럭처리되어 있을 텍스트
+    alert(input+'님 반갑습니다.');
+    
+    // boolean 입력받을 때 사용하는 함수
+    var bool = confirm('수락하시겠습니까?');
+    // confirm에서 대답한 버튼 '확인' = true, '취소' = false로 전달
+    
+    if(bool){
+        alert('수락하셨군요.');
+    }else{
+        alert('거절하셨군요.');
+    }
+    */
+    
+    /* 국어 영어 수학 점수를 입력받고, 총점 평균을 출력하도록 자바스크립트 명령을 구성해 주세요
+    (입력받은 점수, 총점, 평균을 세 줄에 걸쳐 출력)
+    입력받은 문자를 숫자로 변환하는 함수 Number() */
+    a=Number('123');
+    var input=prompt('국어점수를 입력하세요.','100');
+    var kor=Number(input); //input*1
+    var input=prompt('영어점수를 입력하세요.','100');
+    var eng=Number(input); 
+    var input=prompt('수학점수를 입력하세요.','100');
+    var mat=Number(input); 
+    var tot=kor+mat+eng;
+    var ave=tot/3;
+    alert("입력한 점수 국어:"+kor+", 영어:"+eng+", 수학:"+mat+"\n총점:"+tot+"\n평균:"+ave);
+</script>
+</head>
+<body>
+
+</body>
+</html>

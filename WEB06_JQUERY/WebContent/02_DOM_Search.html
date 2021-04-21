@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="script/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+/* 1. 기본 필터링 메서드 */
+// - filter()메서드 사용 두 가지 형태
+// 1) $(selector).filter(selector);
+// 2) $(selector).rilget(function(index){});
+// 예제 : 짝수 번째 또는 홀수 번째 속성 변경 : 필터를 사용하지 않은 예
+/*$(function(){
+    $('h3:even').css({ 'backgroundColor':'black', 'color':'white'});
+});*/
+
+/*$(function(){
+    $('h3').filter(':odd').css({ 'backgroundColor':'red', 'color':'white'});
+});
+$(function(){
+    $('h3').filter(function(index){return index % 3 == 0;}).css({backgroundColor:'blue', color:'white'});
+});*/
+    
+/* 2. 문서 객체 탐색 체이닝과 종료 */
+// 예제 1.
+// 체이닝을 사용해 한 줄로 서로 다른 문서 객체에 스타일 적용 가능
+/*$(function(){
+   $('h3').css('background','orange').filter(':even').css('color','red');
+});*/
+// 문서 객체의 css 변경을 마친 경우 리턴되는 값이 다시 문서객체이므로 위와 같이 또 다른 탐색이나 css 내용을 이어서 적용시킬 수 있습니다.
+// 필터링된 선택자로 css를 변경한 후에 리턴된 선택자는 앞서 필터링한 결과를 그대로 유지합니다. 따라서 다른 체이닝을 이어서 사용하면 계속 필터링 된 결과에 적용되게 합니다. 체이닝에 의한 필터 결과 유지를 해제하려면 아래처람 따로 필터링을 하거나 end() 함수를 사용합니다.
+    
+// 예제2. 체이닝을 사용하지 않은 예
+/*
+$(function(){
+    $('h3').css('background','orange');
+    $('h3;even').css('color','white');
+    // even : 홀수번째, odd : 짝수번째
+    $('h3:odd').css('color','red');
+});
+
+// 예제 3. 체이닝과 end() 함수를 같이 사용한 예
+$(function(){
+    $('h3').css('background','red').filter(':even').css('color','orange').end().filter(':odd').css('color','white');
+});
+// end() : 문서 객체 선택을 필터링 이전 한 단계 뒤로 돌리는 함수입니다.
+*/
+    
+    
+/* 문서 객체 추가 선택 */
+// - add() : 기존 문자 객체를 포함하여 추가로 문서 객체를 선택
+/*$(function(){
+   $('h1').css('background','gray').add('h2').css('color','red');
+   //h1에 배경 gray 적용 후 h2도 추가해 글자색 빨강으로 적용
+   //$('h1').css('background','gray')
+   //$('h1, h2').css('color','red')
+})*/
+    
+    
+/* 문서 객체의 특징 판별 */    
+//   -is()
+$(function(){
+    //$('h1').each(function(index, item){ }) 의 사용 방식에서 ...
+    //this를 사용하면서 index 값이나 item변수가 필요가 없을 시 function() 안을 생략하여 사용이 가능합니다. 다만 이 경우 현재 this의 인덱스를 알아내려면 별도의 함수가 필요합니다.
+    $('h1').each(function(){
+        if($(this).is('.select')){
+            $(this).css('color','red');
+        }
+    }); //h1 중에 클래스가 select인 것만 골라서 CSS적용
+});
+ 
+</script>
+</head>
+<body>
+<!-- 문서 객체의 특징 판별 -->
+<h1 class="select">Header - 0</h1>
+<h1>Header - 1</h1>
+<h1 class="select">Header - 2</h1>
+
+<!--문서 객체 추가 선택-->
+<!--<h1>Header - 0</h1>
+<h2>Header - 1</h2>
+<h1>Header - 2</h1>
+<h2>Header - 3</h2>
+<h1>Header - 4</h1>-->
+
+<!-- 문서 개체 필터링 - 체이닝 - 종료-->    
+<!--<h3>Header - 0</h3>
+<h3>Header - 1</h3>
+<h3>Header - 2</h3>
+<h3>Header - 3</h3>
+<h3>Header - 4</h3>
+<h3>Header - 5</h3>-->
+</body>
+</html>

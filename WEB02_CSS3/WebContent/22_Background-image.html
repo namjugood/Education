@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- 
+	* 배경 속성
+		- 특정 태그의 배경이미지 또는 색상을 지정하는 스타일 속성
+		- 종류
+			1) background-image 속성
+				- 배경에 넣을 그림을 지정하는 스타일 속성
+				- 속성에는 URL 단위 또는 그레이디언트를 입력
+			2) background-size 속성
+				- 그림 크기를 조절할 때 사용하는 스타일 속성
+				- CSS3에서 추가된 기능
+				- 키워드 : contain/cover
+					. contain : 너비를 100$로 지정한 것과 같은 효과
+					. cover : 높이를 100%로 지정한 것과 같은 효과
+			3) background-repeat 속성
+				- repeat : 이미지가 패턴을 이룸
+				- 키워드 : no-repeat/repeat/repeat-x/repeat-y/round/space
+				- repeat-x : x축 방향으로 이미지가 반복
+				- repeat-y : y축 방향으로 이미지가 반복
+			4) background-attachment 속성
+				- 배경 이미지를 어떠한 방식으로 화면에 붙일 것인지를 지정하는 스타일 속성
+				- 키워드 : fixed/scroll
+				- 속성의 기본 키워드 : scroll
+				- fixed : 스크롤을 이동해도 배경이미지 고정
+			5) background-position 속성
+				- background-position : x축 위치;
+				- background-position : x축 위치, y축 위치;
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Background Image</title>
+<style type="text/css">
+	body{
+	background-image:url(image/BackgroundFront.png);
+	background-size : 100%;
+	background-repeat : repeat-x;
+	background-attachment : fixed;
+	background-position : 0 100px;}
+</style>
+</head>
+<body>
+<h1>Lorem ipsum</h1>
+<p>국민의 자유와 권리는 헌법에 열거되지 아니한 이유로 경시되지 아니한다. 모든 국민은 헌법과 법률이 정한 법관에 의하여 법률에 
+의한 재판을 받을 권리를 가진다. 국회는 선전포고, 국군의 외국에의 파견 또는 외국군대의 대한민국 영역안에서의 주류에 대한 동의권을 
+가진다. 국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다.</p>
+<h1>Lorem ipsum</h1>
+<p>재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다. 대통령이 궐위된 때 또는 대통령 당선자가 사망하거나 판결 기타의 사유로 그 자격을 상실한 때에는 60일 이내에 후임자를 선거한다.</p>
+<h1>Lorem ipsum</h1>
+<p>모든 국민은 보건에 관하여 국가의 보호를 받는다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다. 대통령은 내란 또는 외환의 죄를 범한 경우를 제외하고는 재직중 형사상의 소추를 받지 아니한다.</p>
+</body>
+</html>

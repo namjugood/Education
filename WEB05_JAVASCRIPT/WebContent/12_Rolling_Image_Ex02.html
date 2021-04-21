@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>12_Rolling_Image_Ex02.html</title>
+<script type="text/javascript">
+    var num=0;  // 전역변수
+    // Roll 함수안에서 선언된 변수는 함수가 끝나면 변수가 사라지고, 다시 호출되면 다시 만들어지면서 값이 초기화되기 때문에, 연속된 값을 가질 수 없습니다. 따라서 함수의 밖에 변수를 선언해서 페이지가 종료될 때까지 일관된 값을 갖도록 합니다.
+    function Roll(){
+        num++;
+        if(num>10)num=1;
+        document.getElementById("target").src = "images/"+num+".jpg";
+    }
+    function startRoll(){
+        timer=window.setInterval(Roll, 1000);
+    }
+    
+    function stopRoll(){
+        window.clearInterval(timer); // setInterval 멈춤 명령
+    }
+</script>
+</head>
+<body onload="startRoll();">
+<img src="images/1.jpg" id="target" onmouseover="stopRoll()" onmouseout="startRoll()">    
+</body>
+</html>

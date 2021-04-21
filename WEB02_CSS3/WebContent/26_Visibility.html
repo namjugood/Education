@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 
+	* 가시 속성
+		- 태그가 화면에 보이는 방식을 지정하는 속성.
+		- Visibility 속성
+			. visible : 태그를 보이게 만듦
+			. hidden : 태그를 보이지 않게 만듦
+			. collapse : table 태그를 보이지 않게 만듦 
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Visibility</title>
+<style type="text/css">
+	#box{
+		/* display:none -> 태그가 화면에서 제거 */
+		visibility:hidden;  	/* 태그가 화면에서 보이지 않을 뿐 */
+		}
+	table{ /* visibility:collapse; */ }	
+</style>
+</head>
+<body>
+<span>Dummy</span>
+<div id="box">
+	<span>교육의 자주성, 전문성, 정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다.</span>
+</div>
+<span>Dummy</span>
+
+<hr />
+<p>교육의 자주성, 전문성, 정치적 중립성</p>
+<table border="1">
+	<tr><td>Test1</td><td>Test2</td></tr>
+	<tr><td>Test3</td><td>Test4</td></tr>
+</table>
+<p>교육의 자주성, 전문성, 정치적 중립성</p>
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>16_Animation_Ex02</title>
+<style type="text/css">
+    .box{width:100px; height:100px; margin:60px; animation-name:rotate; animation-duration:3s; animation-iteration-count:infinite; animation-direction:alternate;}
+    
+    @keyframes rotate{
+        from{background-color:red; transform:perspective(120px) rotateX(0deg) rotateY(0deg);}
+        50%{background-color:green; transform:perspective(120px) rotateX(-180deg) rotateY(0deg);}
+        to{background-color:blue;transform:perspective(120px) rotateX(-180deg) rotateY(-180deg);}
+    }
+</style>
+</head>
+<body>
+<div class="box"></div>    
+</body>
+</html>

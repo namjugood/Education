@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- 글머리 기호와 함께 세로로 나열되는 리스트 구조를 CSS를 이용하여 가로로 또는 다른 모양으로
+배치하고 일반 메뉴처럼 스타일을 입혀서 사용합니다. -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>List Menu</title>
+<style type="text/css">
+	#tmenu{list-style:none;padding:0px;margin:0px;}
+	#tmenu li{float:left;padding-left:20px;padding-right:20px;padding-top:10px;
+					padding-bottom:10px;background:yellow;border-right:1px solid blue;}
+</style>
+<!-- list-style:none;	글머리기호를 감춥니다 
+padding:0px;	글머리기호가 있던 공간을 삭제합니다
+float:left;	아래로 나열된 리스트를 한 라인에 이어줍니다-->
+</head>
+<body>
+<ul id="tmenu">
+	<li>회사소개</li>
+	<li>사업소개</li>
+	<li>고객지원</li>
+	<li style="border-right-width:0px;">상품문의</li>
+</ul>
+</body>
+</html>

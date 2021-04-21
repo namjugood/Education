@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>글쓰기</title>
+    <style>
+        table{border: 1px solid black; border-collapse: collapse;}
+        table th, table td{border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <form id="write-form" enctype="multipart/form-data">
+        <table id="board-list" align="center">
+            <tr>
+                <th width="100">제목</th>
+                <td width="500">&nbsp;<input type="text" id="subject" size="60"></td>
+            </tr>
+            <tr>
+                <th width="100">작성자</th>
+                <td width="500">&nbsp;{{luser.userid}}<input type="hidden" id="writer" value="{{luser.userid}}"></td>
+            </tr>
+            <tr>
+                <th width="100">내용</th>
+                <td width="500">&nbsp;<textarea id="text" name="text" rows="6" cols="60"></textarea></td>
+            </tr>
+            <tr>
+                <th width="100">이미지</th>
+                <td width="500">&nbsp;<input type="file" id="image" name="image" />
+                </td>
+            </tr>
+        </table>
+        <center>
+            <button type="submit">글쓰기</button>
+            <input type="button" onclick="location.href='/main'" value="돌아가기" />
+        </center>
+    </form>    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script><br>
+    <script src="/boardWrite.js"></script>
+</body>
+</html>

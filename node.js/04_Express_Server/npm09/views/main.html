@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table{border: 1px solid black; border-collapse: collapse;}
+        table th, table td{border: 1px solid black;}
+        #id{text-align: center;}
+        #writer{text-align: center;}
+        /* #count{color: red; font-weight: bold;} */
+    </style>
+</head>
+<body>
+    {{luser.userid}}({{luser.name}})님 안녕하세요 &nbsp; <input type="button" value="글쓰기" 
+    onclick="location.href='/boards/writeForm'">
+    <input type="button" value="회원정보변경" 
+    onclick="location.href='/members/memberUpdateForm/{{luser.userid}}'">
+    <input type="button" value="로그아웃" onclick="location.href='members/logout/'">
+    <br><br>
+    <table id="board-list" align="center">
+        <thead>
+            <tr>  
+                <th width="100">번호</th>
+                <th width="400">제목</th>
+                <th width="100">작성자</th>  
+                <th width="100">조회수</th>  
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script><br>
+    <script src="/boardShow.js"></script>
+</body>
+</html>

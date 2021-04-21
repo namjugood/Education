@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>03 Condition IF</title>
+<script type="text/javascript">
+    /*1. if 조건문 
+    var date = new Date();
+    var hour = date.getHours();
+    
+    if(hour<11){
+        alert(hour+'시 : 아침먹을 시간입니다.');
+    }else if(hour<15){
+        alert(hour+'시 : 점심먹을 시간입니다.');
+    }else{
+        alert(hour+'시 : 저녁먹을 시간입니다.');
+    }
+    */
+    /*
+    if(hour<11)
+        alert(hour+'시 : 아침먹을 시간입니다.');
+    else if(hour<15)
+        alert(hour+'시 : 점심먹을 시간입니다.');
+    else
+        alert(hour+'시 : 저녁먹을 시간입니다.');
+  
+    
+    var min = date.getMinutes();
+    alert(min+'분');
+    var sec = date.getSeconds();
+    alert(sec+'초');
+    var year1 = date.getFullYear();
+    // getYear() 함수는 원래 년도에서 1990년을 뺀 값을 리턴함
+    // getYear() 함수는 웹 표준에서 제거(Deprecated) 되었음
+    // getFullYear()로 대체되어 사용 중
+    alert(year1+'년');
+    var month = date.getMonth();
+    alert((month+1)+'월');
+    var date1 = date.getDate();
+    alert(date1+'일');
+    var week = date.getDay();
+    if(week==1) alert('월요일');
+    else if(week==2) alert('화요일');
+    else if(week==3) alert('수요일');
+    else if(week==4) alert('목요일');
+    else if(week==5) alert('금요일');
+    else if(week==6) alert('토요일');
+    else alert('일요일');
+     */
+    
+    /* 2. switch 조건문 
+    var input = Number(prompt('숫자를 입력하세요', '숫자'));
+    switch(input%2){
+        case 0:
+            alert('짝수입니다.');
+            break;
+        case 1:
+            alert('홀수입니다.');
+            break;
+        default:
+            alert('숫자가 아닙니다.');
+            break;
+    }
+    */
+    
+    /* 3. 삼항 연산자 
+    var input = Number(prompt('숫자를 입력하세요', '숫자'));
+    (input > 0)? alert('양수입니다.') : alert('음수입니다.');
+    if(input>0){
+        alert('양수입니다.');
+    }else{
+        alert('음수입니다.');
+    }
+    
+    a = (input>0)? 1 : 0; */
+    
+    /* 월과 일을 입력받아 요일을 출력하는 코드를 작성하세요
+    요일은 2020년에 한해서만 계산하되, 2020년 1월 1일은 수요일인 것을 기준으로 코드르 작성합니다. */
+    
+    var date = new Date(); // 오늘 날짜에 대한 값
+    var tm = date.getMonth()+1; // 월 추출
+    var td = date.getDate(); // 일 추출
+    tm = String(tm);    // 월을 문자로 변환
+    td = String(td);    // 일을 문자로 변환
+    var m = Number(prompt('월을 입력하세요', tm));
+    var d = Number(prompt('일을 입력하세요', td));
+    
+    var days=0;
+    switch(m){
+        case 12: days=days+30;
+        case 11: days=days+31;
+        case 10: days=days+30;
+        case 9: days=days+31;
+        case 8: days=days+31;
+        case 7: days=days+30;
+        case 6: days=days+31;
+        case 5: days=days+30;
+        case 4: days=days+31;
+        case 3: days=days+29;
+        case 2: days=days+31;    
+    }
+    days = days + d;
+    var s = m + "월" + d + "일은";
+    switch(days%7){
+        case 1 : s = s + "수요일입니다."; break;
+        case 2 : s = s + "목요일입니다."; break;
+        case 3 : s = s + "금요일입니다."; break;
+        case 4 : s = s + "토요일입니다."; break;
+        case 5 : s = s + "일요일입니다."; break;
+        case 6 : s = s + "월요일입니다."; break;
+        case 0 : s = s + "화요일입니다."; break;
+    }
+    alert(s);
+    
+</script>
+</head>
+<body>
+    
+</body>
+</html>

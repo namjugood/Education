@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    #base{position:relative; width:800px; height:400px; border:1px solid black;}
+    
+    #tire{position:relative; top:100px; width:200px; background:red; height:200px; font-size:50px; border-radius:100px; font-weight:bold; line-height:200px; text-align:center;transition:3s;color:white;
+    }
+    
+    #base:hover #tire{transform:translateX(480px) rotate(180deg) scale(1.5)}
+    /* 배경에만 포인터를 올려도 타이어가 굴러감 */
+    
+    /*#tire:hover{transform:translateX(480px) rotate(180deg) scale(1.7) }
+    
+    타이어에 올려야 굴러감*/
+    
+    
+</style>
+</head>
+<body>
+    <div id="base">
+        <div id="tire">타이어</div>
+    </div>    
+</body>
+</html>

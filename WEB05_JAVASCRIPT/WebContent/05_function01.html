@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script type="text/javascript">
+    /* 1. 함수의 개요
+    // - 익명함수 : 이름을 가지고 있지 않은 함수
+    // - 선언적 함수 : 이름을 가지고 있는 함수
+    // 익명 함수
+    // 하나의 변수에 서로 다른 익명함수를 대입하고, 필요할 때마다 필요한 함수를 실행할 수 있다는 장점이 있습니다.
+    var func = function(){
+        var output = Number(prompt('숫자를 입력하세요.', '숫자'));
+        alert(output);
+    }
+    func(); // 익명함수 호출 방법 1
+    
+    var func = function(){
+        var output = prompt('문자를 입력하세요.', '문자');
+        alert(output);
+    }
+    func();
+    alert(func); // 익명함수 호출 방법 2 */
+    // func 변수에는 나중에 저장된 두 번째 익명함수가 저장되어 실행됩니다.
+    // 함수의 정의 영역 및 몸체를 변수에 저장하여 변수의 이름으로 호출하는 형태
+    // 변수는 일시적으로 하나의 함수만 저장할 수 있으며,
+    // 변수의 이름으로 함수를 호출할 시 현재 저장되어있는 함수가 실행됨
+    // 함수는 정의되어 있는 내용을 이름 또는 변수로 호출하여 실행하기 위한 단위코드로
+    // head 영역의 script 태그 안에서 또는 body 영역의 script 태그 안에서
+    // 어디서든 호출할 수 있다.
+    // <body onLoad=:func();">
+    // 또한 input 태그의 이벤트 속성에서도 호출이 가능하다.
+    // <input type="button" onClick="func();
+    
+    // 선언적 함수의 정의
+    function move(){
+        alert('move() 함수 호출.');
+    }
+    
+    // head 영역의 script 태그 안에서 또는 body영역의 script 태그안에서
+    // 어디서든 호출할 수 있다.
+    // <body onLoad = "move();">
+    // 또한 input 태그의 이벤트 속성에서도 호출이 가능하다.
+    //<input type="button" onClick="move();">
+</script>
+</head>
+<body onLoad="move();">
+   <input type="button" value="Click" onClick="move();">
+</body>
+</html>

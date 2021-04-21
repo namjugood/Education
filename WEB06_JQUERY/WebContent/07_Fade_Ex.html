@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    *{margin:0px; padding:0px;}
+    ul{list-style:none;}
+    img{width:500px; height:350px;}
+    #my-fade li{display:none; position:absolute; left:0px; top:0px;}
+</style>
+<script src="script/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    // 1. 페이지가 로딩되면(document가 ready되면), 
+    // 2. 2초에 한 번씩 여섯개의 그림을 조정합니다.
+    // 3. 현재 그림 fadeIn, 나머지 그림 fadeOut
+    
+    //1.
+    $(function(){
+        var num=0;
+        //2. setInterval(function(){},2000);
+        setInterval(function(){
+            //3. 
+            /*for(var i=0;i<5;i++){
+                var k1 = '#my-fade li:eq('+num+')';
+                var k2 = '#my-fade li:eq('+i+')';
+                if(i==num) $(k1).fadeIn(1000);
+                else $(k2).fadeOut(1000);
+            }*/
+            
+            var k1='#my-fade li:eq('+num+')';
+            var k2 = '#my-fade li:eq('+(num-1)+')';
+            $(k1).fadeIn(1000);
+            $(k2).fadeOut(1000);
+            
+            num++;
+            if(num==6) num=0;
+        },2000);
+    });
+</script>
+</head>
+<body>
+    <ul id="my-fade">
+    <li><img src="images/Desert.jpg"></li>
+    <li><img src="images/Hydrangeas.jpg"></li>
+    <li><img src="images/Chrysanthemum.jpg"></li>
+    <li><img src="images/Koala.jpg"></li>
+    <li><img src="images/Penguins.jpg"></li>
+    <li><img src="images/Tulips.jpg"></li>
+</ul> 
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    .prod_list{list-style:none; margin:0px; padding:0px;}
+    .prod_list li{position:relative; float:left; padding:0px; margin:10px; overflow:hidden;}
+    
+    .caption{position:absolute; top:200px; width:300px; height:200px; background:black; opacity:0.3; transition:0.5s;}
+    .caption h1, .caption p {color:white; text-align:center;}
+    
+    .prod_list li:hover .caption{transform:translateY(-200px); opacity:0.7;}
+</style>
+</head>
+<body>
+<ul class="prod_list">
+    <li>
+        <img src="images/prod1.jpg">
+        <div class="caption"> 
+            <h1>상품1</h1>
+            <p>상품1 : 설명텍스트</p>
+            <p>가격 : 12,345 원</p>
+        </div>    
+    </li>
+    
+    <li>
+        <img src="images/prod2.jpg">
+        <div class="caption"> 
+            <h1>상품2</h1>
+            <p>상품2 : 설명텍스트</p>
+            <p>가격 : 12,345 원</p>
+        </div>
+    </li>
+    
+    <li>
+        <img src="images/prod3.jpg">
+        <div class="caption"> 
+            <h1>상품3</h1>
+            <p>상품3 : 설명텍스트</p>
+            <p>가격 : 12,345 원</p>
+        </div>
+    </li>
+</ul>    
+</body>
+</html>

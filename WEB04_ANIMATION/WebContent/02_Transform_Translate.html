@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+    * 변형 함수(2D)
+        1. translate(X,Y) : 지정한 크기만큼 x축과 y축으로 이동
+        2. translateX(X) : 지정한 크기만큼 x축으로 이동
+        3. translateY(Y) : 지정한 크기만큼 y축으로 이동
+        4. scale(X,Y) : 지정한 크기만큼 x축과 y축으로 확대 축소
+        5. scaleX(X) : 지정한 크기만큼 x축으로 확대 축소
+        6. scaleY(Y) : 지정한 크기만큼 y축으로 확대 축소
+        7. rotate(각도) : 지정한 각도만큼 회전(단위 : deg)
+        8. skew(X,Y) : 지정한 크기만큼 x축과 y축으로 왜곡
+        9. skewX(X) : 지정한 크기만큼 x축으로 왜곡
+        10. skewY(Y) : 지정한 크기만큼 y축으로 왜곡
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    .origin{width:200px; height:134px; border:1px solid black; float:left; margin:40px;}
+    
+    .movex{transition:1s;}
+    .movey{transition:1s;}
+    .movexy{transition:1s;}
+    
+    .movex:hover{transform:translateX(50px); 
+        -webkit-transform:translateX(50px);
+        -ms-transform:translateX(50px);
+        -mox-transform:translateX(50px);
+        -o-transform:translateX(50px);    }
+        /*예전에 브라우저마다 구분해서 썼을때의 명령어 들(지금은 필요 없음)*/
+    .movey:hover{transform:translateY(30px);}
+    .movexy:hover{transform:translate(30px, 30px);}
+
+    
+</style>
+</head>
+<body>
+<div class="origin">
+    <div class="movex"><img src="images/bus.jpg"></div>
+</div>
+
+<div class="origin">
+    <div class="movey"><img src="images/bus.jpg"></div>
+</div>
+
+<div class="origin">
+    <div class="movexy"><img src="images/bus.jpg"></div>
+</div>    
+</body>
+</html>

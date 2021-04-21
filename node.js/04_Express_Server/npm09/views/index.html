@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form id="login">
+        <table id="login">
+            <tbody>
+                <tr>    <td><input type="text"     id="userid" name="userid" placeholder="아이디"></td>     </tr>
+                <tr>    <td><input type="password" id="pwd"    name="pwd" placeholder="비밀번호"></td>   </tr>
+                <tr>
+                    <td><button type="submit">로그인</button>
+                    <input type="button" value="회원가입" onclick="location.href='/members/'"></input></td>
+                    <span id="msg"></span>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script><br>
+    <script src="/loginCheck.js"></script>
+</html>

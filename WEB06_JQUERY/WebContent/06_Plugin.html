@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    *{margin:0px; padding:0px;}
+    ul{list-style:none;}
+    img{width:500px; height:350px;}
+</style>
+<script src="script/jquery-3.5.1.js"></script>
+<script src="script/jquery.innerfade.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#inner-fade').innerfade({
+            animationtype:'fade',
+            speed:'sloww',
+            timeout:2000,
+            containerheight:'1em'
+        });
+    });
+</script>
+</head>
+<body>
+<ul id="inner-fade">
+    <li><img src="images/Desert.jpg"></li>
+    <li><img src="images/Hydrangeas.jpg"></li>
+    <li><img src="images/Chrysanthemum.jpg"></li>
+    <li><img src="images/Koala.jpg"></li>
+    <li><img src="images/Penguins.jpg"></li>
+    <li><img src="images/Tulips.jpg"></li>
+</ul>    
+</body>
+</html>

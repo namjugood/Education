@@ -1,0 +1,15 @@
+{
+  "name": "npm01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "lnj",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "i": "^0.3.6"
+  }
+}

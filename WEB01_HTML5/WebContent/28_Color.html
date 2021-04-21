@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- 
+	* 색상 단위
+	- http://www.colorpicker.com
+	- 키워드를 사용한 색상 적용(red, orange, blue, black, white, magenta, green, yellow 등)
+	- RGB 색상단위
+		. rgb(red, green, blue) -> (0x00~0xFF - 16진수) 0~255
+		. rgba(..., alpha) -> alpha(투명도:0.0(완전투명)~1.0(완전불투명))
+		
+	- Hex 코드 색상 단위 : #000000 -> 검은색	#FFFFFF RGB(255,255,255) ->흰색
+	- #FF0000 -> 적색 최대치	#00FF00 -> 초록색 최대치	#0000FF -> 파란색 최대치 
+	
+	- HSL 색상단위 : hsl(hue(색상), saturation(채도), lightness(명도))
+		. hsla(..., alpha) -->
+	
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Color</title>
+</head>
+<body>
+
+<h1 style = "background-color:rgb(241, 14, 33);">Header-1</h1>
+<h2 style = "background-color:rgba(241, 14, 33, 0.5);">Header-2</h2>
+<h3 style = "background-color:#F0F641; opacity:0.5;">Header-3</h3>
+<h4 style = "background-color:hsl(111, 91%, 38%);">Header-4</h4>
+<h5 style = "background-color:rgb(111, 91%, 38%, 0.5);">Header-5</h5>
+
+</body>
+</html>

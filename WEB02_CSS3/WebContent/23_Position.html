@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- 
+	* Position 속성 : 웹 문서 안의 요소들을 자유자재로 배치해 주는 속성(양/음수 모두 사용 가능)
+		- HTML 태그의 위치 설정 방법을 변경할 때 사용
+		- 상대적 위치 좌표 사용시 키워드
+			. static : 요소를 문서의 흐름에 맞추어 배치. (top/right/bottom/left 이용배치 변경불가)
+						float 속성을 이용해 좌우로 배치할 수 있음
+			. relative : 현재 위치를 기준으로 위치 지정. 이전 요소에 자연스럽게 연결해 배치. 위치를 지정할 수 있음
+		- 절대적 위치 좌표 사용시 키워드
+			. absolute : body 또는 컨테이닝 박스를 기준으로 위치를 지정할 수 있음. 원하는 위치를 지정해 배치.
+							요소를 감싸는  <div>태그를 만들고 position을 relative로 지정해놓고 사용해야 됨
+			. fixed : 스크린을 기준으로 위치 고정. 지정한 위치에 고정해 배치. 화면에서 요소가 잘릴 수도 있음.
+	* z-index 속성 : default 값 : auto
+		- HTML 페이지의 뒤에 입력한 태그가 상위에 위치하는 순서를 변경 시 사용
+		- position 속성인 relative, absolute가 적용된 상태에서 적용해야 됨
+	* overflow 속성
+		- 내부의 요소가 부모의 범위를 벗어날 때 어떻게 처리할 지 지정하는 속성
+		- 키워드
+			. hidden : 영역을 벗어나는 부분을 보이지 않게 만듦
+			. scroll : 영역을 벗어나는 부분을 스크롤로 만듦
+			. auto : 영역을 벗어날 때 스크롤 바가 생기고, 벗어나지 않을 때 스크롤 바가 숨겨짐.-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Position</title>
+<style type="text/css">
+	.box1{width:100px;background:blue;padding:20px;color:white;font-weight:bold;
+	float:left;}
+	/* static : 별도의 position 속성지정 없이 사용하면 상대적 위치 및 static으로 인식되어 사용됩니다. */
+	.box2{width:300px;background:red;padding:20px;color:white;font-weight:bold;
+	float:left;}
+	 /* left:-20%; static은 left로 조정이 되지 않습니다. */
+	 .temp{clear:both;height:50px;}
+	 /* 현재 태그에 앞서 사용된 float 값 left와 right를 해제하는 속성입니다. */
+	 
+	.box3{width:100px;background:yellow;padding:20px;float:left;}
+	.box4{position:relative; left:-50px;top:30px;width:300px;background:green;padding:20px;float:left;
+	color:white;}
+	
+	#wrap{position:relative;width:300px;height:300px;border:1px solid black;
+		background:white;z-index:1; overflow:scroll;}
+	.box5{position:absolute;width:50px;height:50px;}
+	#abs1{top:0;left:0;background:red;}
+	#abs2{top:50px;left:50px;background:blue;}
+	#abs3{top:100px;left:100px;background:red;}
+	#abs4{top:150px;left:150px;background:blue;}
+	#abs5{top:200px;left:200px;background:red;}
+	#abs6{top:250px;left:250px;background:blue;}
+	#abs7{top:300px;left:300px;background:red;}
+	
+	#fixed{position:fixed; top:5px; left:400px; width:100px; height:100px;
+			background:silver; z-index:10;}
+		
+</style>
+</head>
+<body>
+<h1>절대적 위치 좌표 - fixed</h1>
+		<div id="fixed"></div>
+<hr />
+<h1>절대적 위치 좌표 - absolute</h1>
+	<div id="wrap">
+		<div id="abs1" class="box5"></div>
+		<div id="abs2" class="box5"></div>
+		<div id="abs3" class="box5"></div>
+		<div id="abs4" class="box5"></div>
+		<div id="abs5" class="box5"></div>
+		<div id="abs6" class="box5"></div>
+		<div id="abs7" class="box5"></div>
+	</div>
+<hr />
+<h1>상대적 위치 좌표 - static</h1>
+<div class="box1">박스1</div>
+<div class="box2">박스2</div>
+<div class="temp"></div>
+<hr />
+<h1>상대적 위치 좌표 - relative</h1>
+<div class="box3">박스3</div>
+<div class="box4">박스4</div>
+</body>
+</html>

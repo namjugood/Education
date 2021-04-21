@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    .origin{width:210px; height:200px; border:1px solid black; float:left; margin: 40px; overflow:hidden;}
+    .scalex{transition:2s;}
+    .scaley{transition:2s;}
+    .scale{transition:2s;}
+    .scalex:hover{transform:scaleX(1.2);}
+    .scaley:hover{transform:scaleY(1.5);}
+    .scale:hover{transform:scale(1.7);}
+    /* (배수)만큼 확대, 강조의 의미로 쓰임*/
+
+</style>
+</head>
+<body>
+<div class="origin">
+    <div class="scalex"><img src="images/fruit.jpg"></div>
+</div>
+
+<div class="origin">
+    <div class="scaley"><img src="images/fruit.jpg"></div>
+</div>
+
+<div class="origin">
+    <div class="scale"><img src="images/fruit.jpg"></div>
+</div>        
+</body>
+</html>

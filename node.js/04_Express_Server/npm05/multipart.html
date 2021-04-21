@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" />
+        <input type="text" name="title" />
+        <button type="submit">업로드</button>
+    </form>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    // 폼 태그에 submit 이벤트 발생 시 실행하는 이벤트 리스너 설정
+    document.getElementById('form').addEventListener('submit', (e)=>{
+        e.preventDefault(); // submit 동작 일시 멈춤
+        const formData = new FormData(); // 폼데이터 객체 생성
+        formData.append('image', e.target.image.files[0]) // image 데이터 append
+        formData.append('title', e.target.title.value) // title 데이터 append
+        axios.post('/upload', formData); // 완성된 폼 객체를  '/upload' request로 전송
+    });
+</script>
+</html>

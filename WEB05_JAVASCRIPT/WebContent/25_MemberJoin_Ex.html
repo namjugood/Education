@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    #wrap{width:970px; margin:0 auto;}
+    h1{color:green;}
+    table{width:100%; border-collapse:collapse; font-size:12px; line-height:24px;}
+    table td, th{border:#d3d3d3 solid 1px; padding:5px;}
+    th{background:yellowgreen;}
+</style>
+<script type="text/javascript">
+    function joinCheck(){
+        if(document.frm.id.value == ""){
+            alert("아이디는 필수 업력 사항입니다.")
+            frm.id.focus();
+            return false;
+        }
+        if(document.frm.id.value.length<4){
+            alert("아이디는 4글자 이상이어야 합니다.");
+            frm.id.focus();
+            return false;
+        }
+        if(document.frm.pwd.value == ""){
+            alert("비밀번호는 필수 입력사항입니다.");
+            frm.pwd.focus();
+            return false;
+        }
+        if(document.frm.pwd.value != document.frm.pwd_check.value){
+            alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+            frm.pwd_check.focus();
+            return false;
+        }
+        if(document.frm.name.value==""){
+            alert("이름은 반드시 입력해야 합니다.");
+            frm.name.focus();
+            return false;
+        }
+        if(document.frm.email.value==""){
+            alert("이메일은 반드시 입력해야 합니다.");
+            frm.email.focus();
+            return false;
+        }
+        return true;   
+    }
+    
+</script>
+</head>
+<body>
+<div id="wrap" align="center">
+    <h1>사용자 등록</h1>
+    <form name="frm" method="get" action="25_Memberjoin_result.html">
+        <table>
+            <tr><th>아이디</th>
+                <td><input type="text" name="id" size="20">
+                   <input type="button" value="중복체크">
+                   <input type="hidden" name="re_id">   
+                </td></tr>
+            <tr><th>비밀번호</th>
+               <td><input type="password" name="pwd" size="20"> *</td></tr>
+            <tr><th>비밀번호 확인</th>
+               <td><input type="password" name="pwd_check" size="20"> *</td></tr> 
+            <tr><th>이름</th>
+               <td><input type="text" name="name" size="20"> *</td></tr>
+           <tr><th>이메일</th>
+               <td><input type="text" name="email" size="20"> *</td></tr>
+            <tr><th>전화번호</th>
+               <td><input type="text" size="5" name="phone1" > -
+                   <input type="text" size="7" name="phone1" > -
+                   <input type="text" size="7" name="phone3" ></td></tr>
+            <tr><td colspan="2" align="center"> *는 필수입력사항입니다.</td></tr>     
+        </table><br><br>
+        <input type="submit" value="등록" onclick="return joinCheck();">
+        <input type="reset" value="다시 작성">
+        <input type="button" value="로그인페이지로">
+    </form>
+</div>    
+</body>
+</html>

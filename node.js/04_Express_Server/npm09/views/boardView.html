@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table{border: 1px solid black; border-collapse: collapse;}
+        table th, table td{border: 1px solid black;}
+        #subject{text-align: center;}
+    </style>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td width="150" align="center">번호</td>
+            <td width="150" align="center">{{board.id}}</td>
+                <input type="hidden" id="boardnum" value="{{board.id}}">
+            <td width="150" align="center">작성자</td>
+            <td width="150" align="center">{{board.writer}}</td>
+        </tr>
+        <tr>
+            <td width="150" align="center">작성일</td>
+            <td width="150" align="center">{{board.created_at | date("YY/MM/DD")}}</td>
+            <td align="center">조회수</td>
+            <td align="center">{{board.readCount}}</td>
+        </tr>
+        <tr>
+            <td align="center" width="150">제목</td>
+            <td width="150" colspan="3">&nbsp;{{board.subject}}</td></tr>
+        <tr height="300">
+            <td align="center" width="150">내용</td>
+            <td width="150" colspan="3">&nbsp;{{board.content}}<br>
+                {%if board.filename%}
+                    <img src="/upload/{{board.realfilename}}" width="400">
+                {%endif%}
+            </td>
+        </tr>
+    </table>
+    <center>
+        <input type="submit" value="수정" onclick="location.href='/boards/UpdateForm/{{board.id}}'"/>
+        <input type="button" value="돌아가기" onclick="location.href='/main'"/>
+    </center><br><br>
+
+    <table align="center" id="reply-list">
+        <thead>
+            <tr>
+                <td width="120" align="center">작성일시</td>
+                <td width="70" align="center">작성자</td>
+                <td width="440" align="center">내용</td>
+                <td width="70" align="center" >&nbsp</td>
+            </tr>
+            <tr>
+                <td align="center"></td>
+                <td align="center">{{luser.userid}}</td>
+                <input type="hidden" id="userid" value="{{luser.userid}}">
+                <td align="center">
+                    <input type="text" id="reply" size="55" placeholder="댓글을 입력하세요">
+                </td>
+                <td align="center">
+                    <input type="button" value="작성" onclick="writeReply()"> 
+                </td>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr>
+                <td></td><td></td><td></td><td></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/reply.js"></script>
+</body>
+</html>
+

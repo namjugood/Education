@@ -1,0 +1,12 @@
+<!-- 다른 파일을 불러와서 현재 페이지에 삽입
+중괄호와 퍼센트로 된 영역 안에 표시 : extends '파일명' -->
+{% extends 'include.html' %}
+
+<!-- 별도의 공간에 블럭을 만들고, 그 블럭에 내용을 전송 : 
+    block content를 중괄호와 퍼센트로 된 영역안에 표시
+    endblock 중괄호와 퍼센트로 된 영역 안에 표시-->
+{% block content %}
+<h1>{{title}}</h1>
+<h2>welcome to {{title}}</h2>
+{% endblock %}
+

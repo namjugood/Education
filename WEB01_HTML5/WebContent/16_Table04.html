@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 코딩으로 셀을 합치는 방법 -->
+<!--  1. 합치고자 하는 셀들의 td 태그를 골라냅니다
+		2. 골라낸 셀들 중 가장 왼쪽, 가장 위에 있는 셀 td만 남기고 나머지 td를 삭제합니다.
+		3. 행으로 몇 개가 삭제되고, 열로 봤을 때 몇 개의 열이 삭제되었는지 파악한 후
+		4. 삭제된 행의 갯수 +1만큼 남아있는 셀의 속성으로 rowspan 값을 설정합니다.
+		5. 또한 삭제된 열의 갯수 +1 만큼 남아있는 셀의 속성으로 colspan 값을 설정합니다.
+		6. 삭제되지 않고 남아있는 셀이 없어진 셀의 역할까지 한다는 의미의 속성값입니다. -->
+<table width="750" cellpadding="10" cellspacing="1" bgcolor="blue" align="center">
+	<tr height="50" bgcolor="white" align="center">
+	<!-- tr에 align 을 사용하면 표의 내에서 문자가 정렬됨 -->
+		<td width="300" colspan="2">1행 1열</td>	 
+		  
+		<td width="150">1행 3열</td>  
+		<td width="150">1행 4열</td>  
+		<td width="150">1행 5열</td>
+	</tr>
+	<tr height="50" bgcolor="white" align="center">
+		<td colspan="3">2행 1열</td>	 
+		  
+		<td>2행 4열</td>  
+		<td>2행 5열</td>
+	</tr>
+	<tr height="50" bgcolor="white" align="center">
+		<td rowspan="3">3행 1열</td>	 
+		<td>3행 2열</td>  
+		<td>3행 3열</td>  
+		<td rowspan="3" colspan="2">3행 4열</td>  
+		
+	</tr>
+	<tr height="50" bgcolor="white" align="center">
+			 
+		<td>4행 2열</td>  
+		<td>4행 3열</td>  
+		
+	</tr>
+	<tr height="50" bgcolor="white" align="center">
+			 
+		<td>5행 2열</td>  
+		<td>5행 3열</td>  
+		
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Attribute Selector</title>
+<style type="text/css">
+input[type=text]{background:red;}
+#textinput{width:300px;height:50px;}
+input[type=password]{background:blue;}
+</style>
+</head>
+<body>
+
+<form action="">
+<input type="text" id="textinput"/><br />
+<input type="password"/><br />
+<input /><br />
+<input type="text" />
+<!-- type이 지정되지 않은 input 태그는 기본값으로 적용된 "text"로 적용되지만
+스타일 시트 적용 및 선택자 적용은 되지 않습니다. -->
+
+</form>
+</body>
+</html>

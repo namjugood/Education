@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    p{position:relative; width:400px; height:90px;}
+    div{position:absolute; width:400px; height:65px; font-size:36px; text-align:center; color:yellow; background:red; padding-top:25px; top:0; left:0; display:none;}
+    span{display:none;}
+</style>
+<script src="script/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('#fadeIn').click(function(){
+        $('div').fadeIn(2000, function(){ $('span').fadeIn(100); });
+    });
+    $('#fadeOut').click(function(){
+        $('div').fadeOut(2000, function(){ $('span').fadeOut(100); });
+    });
+    $('#fadeToggle').click(function(){
+        $('div').fadeToggle(2000, function(){ $('span').fadeToggle(100); });
+    });
+});
+</script>
+</head>
+<body>
+    <p>★ fadeIn 동작은 불투명도를  점점 높여서 보이도록 하는 원리입니다.</p><p>★ speed를 fast, normal, slow 또는 0이상의 숫자(밀리세컨드 단위)를 입력합니다.</p><p>★ 함수안에 익명 함수를 추가하여 fadeIn 끝난 후에 실행할 동작을 추가로 지정한다.</p>    
+<div><span>SUCCESS!</span></div>
+<button id="fadeIn">fadeIn</button>
+<button id="fadeOut">fadeOut</button>
+<button id="fadeToggle">fadeToggle</button>
+</body>
+</html>

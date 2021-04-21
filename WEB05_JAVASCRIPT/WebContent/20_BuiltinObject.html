@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script type="text/javascript">
+    // 1. Object 객체
+    // - 객체를 문자열로 변환할 때 자동으로 호출
+    /*var obj = new Object();
+    alert(obj);
+    alert(obj.toString());
+    
+    
+    var student = {  // 자바 스크립트에서의 객체 정의
+        name:'홍길동',
+        grade:'고등학교 1학년',
+        toString:function(){ // - toString() 메서드 정의
+            return this.name+':'+this.grade;
+        }
+    };
+    alert(student);
+    alert(student.toString());*/
+    
+    // 2. Number 객체
+    // - 생성 방법 2가지
+    /*var numberFromConstructor = new Number(273); // 생성자에 의한 생성
+    var numberFromLiteral = 273; // 수치 데이터 입력에 의한 생성
+    
+    alert(typeof(numberFromConstructor)); // object
+    alert(numberFromConstructor.toString()); //273
+    
+    alert(typeof(numberFromLiteral)); // Number
+    alert(numberFromLiteral.toString()); //273
+    
+    // - Number 생성자 함수의 속성
+    // . MAX_VALUE : 자바스크립트의 숫자가 나타낼 수 있는 최대 숫자.
+    // . MIN_VALUE : 자바스크립트의 숫자가 나타낼 수 잇는 최소 숫자.
+    // . NEGATIVE_INFINITY : 음의 무한대 숫자
+    // . POSITIVE_INFINITY : 양의 무한대 숫자
+    // . NaN : 자바스크립트 숫자로 나타낼 수 없는 숫자
+    alert(Number.MAX_VALUE);
+    alert(Number.POSITIVE_INFINITY);*/
+    
+    /* 3. String 객체 
+    var stringFromLiteral = 'Hello World...!';
+    var stringFromConstructor = new String('Hello World..!');
+    alert(typeof(stringFromLiteral)+ ' : '+ typeof(stringFromConstructor));
+    // - length 속성 : 문자열 길이
+    alert(stringFromLiteral.length);
+    alert(stringFromConstructor.length);
+    var characters = prompt('비밀번호를 입력하세요', '6글자 이상');
+    
+    if(characters.length<6) alert('6자 이상 입력하세요.');
+    else alert('입력되었습니다.');
+    */
+    //charAt(index) : 문자열에서 인덱스 번호에 해당하는 문자를 반환합니다.
+    // indexOf(찾을 문자) : 문자열의 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자의 위치를 반환합니다. 찾는 문자가 없으면 -1을 반환합니다.
+    // lastIndexOf(찾을 문자) : 문자열의 오른쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 찾은 문자의 위치를 반환. 찾는 문자가 없으면 -1을 반환
+    // match(찾은 문자) : 문자열의 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 찾은 문자를 반환합니다.
+    // replace(바꿀문자, 새문자) : 문자열 왼쪽부터 바꿀 문자와 일치하는 문자를 찾아 제일 먼저 찾은 문자를 새 문자로 치환
+    // search(찾을 문자) : 문자열의 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자 위치를 반환합니다.,
+    // slice(a, b) : a개의 문자를 자르고 b번째 이후의 문자를 자른 후 남은 문자를 반환합니다
+    // substring(a, b) : a위치부터 b이전 위치까지 의 문자를 추출하여 반환합니다.
+    
+    // substr(a, 문자갯수) : 문자열의 a 위치부터 지정한 문자 갯수만큼 문자를 추출 반환
+    // split(문자) : 지정한 문자를 기준으로 데이터를 나누어 배열에 저장하여 반환
+    // toLowerCase() : 모두 소문자로
+    // toUpperCase() : 모두 대문자로
+    // concat(새로운 문자) : 새로운 문자열 이어붙이기
+    // charCodeAt(a) : a위치의 문자 아스키코드 값을 반환
+    // fromCharCode(아스키코드 값) : 아스키코드 값에 해당하는 문자를 반환
+    // trin() : 문자 앞 뒤에 존재하며 안보일 수 있는 공백을 제거합니다.
+    /*
+    var str="Hello Thank you good luck to you";
+    document.write(str.charAt(0), "<br>"); // 0번째 글자 -H
+    document.write(str.charAt(16), "<br>"); // 16번째 글자 -g
+    document.write(str.indexOf("you"), "<br>"); // you의 위치(처음부터 찾음) - 12
+    document.write(str.indexOf("you", 16), "<br>"); // you의 위치(16번째 글자부터 찾음) - 29
+    document.write(str.lastIndexOf("you", 25), "<br>"); // you의 위치(25번째 글자부터 왼쪽으로 찾음) - 12
+    document.write(str.match("luck"), "<br>"); // luck - 매칭된 글자
+    document.write(str.search("you"), "<br>"); // 12 - 검색된 글자 위치
+    document.write(str.substr(21,4), "<br>"); // luck - 21 위치부터 4글자
+    document.write(str.substring(6, 12), "<br>"); // Thank - 6부터 11까지
+    document.write(str.replace("you", "me"), "<br>"); // hello Thank me good luck to you
+    document.write(str.toLowerCase(), "<br>"); // hello Thank you good luck to you
+    document.write(str.toUpperCase(), "<br>"); // HELLO THANK YOU GOOD LUCK TO YOU
+    var arr = str.split(" "); // 공백으로 문자열을 나눠서 배열에 저장
+    document.write(arr[0], "<br>"); // Hello
+    document.write(arr[4], "<br>"); // luck
+    document.write(str.charCodeAt(1), "<br>"); // 72
+    document.write(String.fromCharCode(101), "<br>"); // e
+    */
+    
+    /* Date 객체 */
+    // getFullYear() : 연도정보를 반환
+    // getMonth() : 월 정보를 반환(0~11)
+    // getDate() : 일 정보를 반환
+    // getDay() : 요일 정보를 반환
+    // getHour() : 시 정보를 반환
+    // getMinutes() : 분 정보를 반환
+    // getSecond() : 초 정보를 반환
+    // getMillisecond() : 밀리초 정보 반환(1/1000 초)
+    // getTime() : 1970년 1월 1일부터 경과된 시간을 밀리초로 표기
+    // toGMTString() : GMT표준 표기 방식으로 문자형 데이터 변환
+    // setFullYeal() : 연도정보를 수정
+    // setMonth: 월 정보를 수정(0~11)
+    // setDate() : 일 정보를 수정
+    // 요일은 날짜에 의존하여 결정되므로 수정하는 메서드 없음
+    // setHour() : 시 정보를 수정
+    // setMinutes() : 분 정보를 수정
+    // setSecond() : 초 정보를 수정
+    // setMillisecond() : 밀리초 정보만 수정(1/1000 초)
+    // setTime() : 1970년 1월 1일부터 경과된 시간을 밀리초로 수정
+    // toLocalString() : 운영시스텀 표기 방식으로 문자형 데이터 반환
+    
+    var today= new Date();
+    var nowMonth = today.getMonth() +1;
+    var nowDate = today.getDate();
+    var nowDay = today.getDay();
+    document.write("<h1>오늘 날짜 정보</h1><br>");
+    document.write("현재 월 : "+nowMonth+ "<br>");
+    document.write("현재 일 : "+nowDate, "<br>");
+    document.write("현재 요일 : "+nowDay, "<br>");
+    
+    var worldcup = new Date(2022, 6, 30);
+    var theMonth = worldcup.getMonth() +1;
+    var theDate = worldcup.getDate();
+    var theDay = worldcup.getDay();
+    document.write("<h1>월드컵 날짜 정보</h1>");
+    document.write("2022월드컵 몇 월 : "+theMonth, "<br>");
+    document.write("2022월드컵 몇 일 : "+theDate, "<br>");
+    document.write("2022월드컵 무슨 요일 : "+theDay, "<br>");
+    
+    var nowYear = today.getFullYear();
+    var theDate = new Date(nowYear, 11, 31);
+    var diffDate = theDate.getTime() - today.getTime();
+    document.write("<br/><br/>12/31 밀리초 : "+ theDate.getTime());
+    document.write("<br/>오늘 날짜 밀리초 : " + today.getTime());
+    document.write("<br/>theDate와 today와의 차 : "+ diffDate);
+    
+    var result = Math.ceil(diffDate / (60*1000*60*24));
+    // 밀리초 / 1000 -> 1초, 다시 60으로 나누면 1분, 다시 60으로 나누면 1시간
+    // 24로 나누면 '일'의 값을 얻을 수 있습니다.
+    // Math.ceil : 소수점 첫째 자리에서 올림 -> 정수로 만듭니다.
+    document.write("<h1>오늘부터 올해 연말까지 남은 날짜</h1>");
+    document.write("<h1>D-Day : "+result +"일 남았습니다.</h1>")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

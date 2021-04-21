@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Layout03</title>
+</head>
+<style type="text/css">
+	#first{position:relative; width:100%; height:100px; background:white; border:1px dotted black;}
+		#first_text{position:relative; width:250px; height:100%; margin:0 auto; text-align:center; 
+						font-weight:bold; line-height:150px; border:1px solid red; font-size:200%;}
+	/* <!-- -------------------------------------------------------------------------------------------- --> */
+	#second{position:relative; width:100%; height:100px; background:white; border:1px dotted black;}
+		#second_text{position:relative; width:450px; height:100%; margin:0 auto; border:1px solid blue;}
+	/* <!-- -------------------------------------------------------------------------------------------- --> */
+	#third{position:relative; width:100%; height:600px; background:white;border:1px dotted black;}
+		#third_view{position:relative; width:1100px; height:600px; margin:0 auto; border:1px solid red; 
+						background:red;}
+		#box1{position:absolute; width:800px; height:500px; background:red; left:0; top:0;}
+		#box2{position:absolute; width:800px; height:500px; right:0; bottom:0; overflow:hidden;}
+		#box3{position:absolute; width:400px; height:350px; background:white; left:100px; bottom:50px; 
+				box-shadow:5px 5px 5px;}
+			#box3_text1{position:relative; width:350px; height:100px; margin:0 auto; font-size:190%;
+								font-weight:bold; text-align:center; line-height:100px; border:1px dashed blue;}
+			#box3_text2{position:relative; width:350px; height:250px; margin:0 auto; font-size:100%;
+								border:1px dashed blue;}
+	/* <!-- -------------------------------------------------------------------------------------------- -->	 */			
+</style>
+<body>
+<!-- -------------------------------------------------------------------------------------------- -->
+<div id="first">
+	<div id="first_text">Content Title</div>
+</div>
+<!-- -------------------------------------------------------------------------------------------- -->
+<div id="second">
+	<div id="second_text">
+		대한민국의 영토는 한반도와 그 부속도서로 한다. 제2항과 제3항의 처분에 대하여는 법원에 제소할 수 없다. 국무회의는 대통령, 국무총리
+		와 15인 이상 30인 이하의 국무위원으로 구성된다.
+	</div>
+</div>
+<!-- -------------------------------------------------------------------------------------------- -->
+<div id="third">
+	<div id="third_view">
+		<div id="box1"></div>
+		<div id="box2"><img src="images/Penguins.jpg" width="800"></div>
+		<div id="box3">
+			<div id="box3_text1">Segment Title</div>
+			<div id="box3_text2">비상계엄하의 군사재판은 군인, 군무원의 범죄나 순사에 관한 간첩죄의 경우와 초병, 초소, 유독음식물공급 포로에 관한 최종 법률이 
+				정한 경우에 한하여 단심으로 할 수 있다</div>
+		</div>
+	</div>
+</div>
+<!-- -------------------------------------------------------------------------------------------- -->
+</body>
+</html>

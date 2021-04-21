@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rolling Image Ex01</title>
+<script type="text/javascript">
+/*
+    스크립트 언어로 HTML 태그를 접근 조작하는 방법
+    1. form 태그를 사용할 경우 docment.폼 이름.태그의 name으로 지목
+    2. form 태그를 사용하지 않는 경우, document.getElementById(id이름)으로 지목
+*/
+    function changeImg(){
+        document.getElementById("target").src = 'images/2.jpg';
+        // form 태그가 없는 요소를 선택
+        // .속성의 값을 변경하여 이미지 변경
+    }
+    function recoverImg(){
+        document.getElementById("target").src='images/1.jpg';
+    }
+</script>
+</head>
+<body>
+<img src="images/1.jpg" id="target" onmouseover="changeImg();" onmouseout="recoverImg();"> <!--onmouseover="" : 해당 태그에 마우스포인터가 올라가면 일어나는 이벤트 onmouseout="" : 해당 태그에서 마우스 포인터가 밖으로 벗어나면 일어나는 이벤트-->
+</body>
+</html>

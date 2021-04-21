@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    .origin{width:160px; height:240px; border:1px solid black; float:left; margin:40px;}
+    .ltop .rose{transform-origin:left top; transition:2s;}
+    .rtop .rose{transform-origin:right top; transition:2s;}
+    .lbottom .rose{transform-origin:left bottom; transition:2s;}
+    .rbottom .rose{transform-origin:right bottom; transition:2s;}
+    
+    .rose:hover{transform:rotate(100deg);}
+    /* 이미지의 클래스 네임을 한 번에 지칭하지만 동작은 마우스가 올라가는 이미지에만 hover적용 */
+</style>
+</head>
+<body>
+<div class="origin">
+    <div class="ltop"><img src="images/rose.jpg" class="rose"></div>
+</div>
+
+<div class="origin">
+    <div class="rtop"><img src="images/rose.jpg" class="rose"></div>
+</div> 
+<div class="origin">
+    <div class="lbottom"><img src="images/rose.jpg" class="rose"></div>
+</div>
+
+<div class="origin">
+    <div class="rbottom"><img src="images/rose.jpg" class="rose"></div>
+</div>   
+</body>
+</html>

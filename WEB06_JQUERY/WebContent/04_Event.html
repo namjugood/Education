@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    .reverse{background:black; color:white;}
+    .outer{width:200px; height:100px; background:orange; padding:50px; margin:10px;}
+    .inner{width:100px; height:100%; background:pink;}
+</style>
+<script src="script/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    $(function(){
+        // 현재 위체이 작성되는 명령은 페이지가 브라우저에 보여짐과 동시에 실행됨
+    });
+    $(function(){
+        // 해당 명령을 현재 위치(페이지가 브라우저에 표시되는 시점에 실행될 명령을 쓰는 곳)에 쓰되 이벤트를 연결해서 잠시 실행을 보류하고, 이벤트 발생 시에 실행되도록 설정하는 것이 이벤트 연결입니다.
+    })
+    /* 1. 이벤트 연결1 */
+    // - on()
+    // - 사용 형태
+    // 1) $(selector).on(eventNamem function(event){ });
+   /*$(function(){
+        $('h1').on('click', function(event){
+            $(this).html(function(index, html){return html+'+';});
+        });
+    });*/ // 클릭할 때마다 원래의 html내용에 '+'를 이어붙여 표시합니다.
+    
+    // 2) $(selector).on(object);
+    /*$(function(){
+        $('h1').on({
+            mouseenter:function(){$(this).addClass('reverse')},
+            mouseleave:function(){$(this).removeClass('reverse')}
+        });
+    });*/
+    
+    /* 2. 이벤트 연결 */
+    // -hover() : mouseenter 이벤트와 mouseleave이벤트를 동시에 연결
+    // - $(selector).hover(function(event){}, function(event){});
+    /*$(function(){
+        $('h1').hover(
+        function(event){ $(this).addClass('reverse');},
+        function(event){ $(this).removeClass('reverse');}
+        );
+    });*/
+    
+    /* 3. 이벤트 제거 */
+    // - off() ---> one()
+    /*$(function(){
+        // 이벤트 연결
+        $('h1').on('click', function(){
+            $(this).html('click');
+            //이벤트 제거  -> addClass 상태에서 멈춤
+            $(this).off();
+        });
+    });*/
+    
+    
+    /* 4. 매개변수 context */
+    // - $(selector, context)
+    // . context:selector가 적용하는 범위를 한정
+    // . 특정 부분의 선택지를 선택하고 싶을 때 사용하는 매개변수
+    /*$(function(){
+        $('div').on('click', function(){
+            var header = $('h1',this).text();
+            var paragraph = $('p',this).text();
+            alert(header + " : "+paragraph);
+        });
+    });*/
+    
+    
+    /* 5. 이벤트 강제 발생 */
+    // - 사용 형태
+    // 1) $(selector).trigger(eventName);
+    /*$(function(){
+        $('h1').click(function(){
+            $(this).html(function(index, html){return html+'>'; });
+        });
+        // 클릭 이벤트에 명령을 걸어두고 trigger('click') 명령으로 마치 마우스로 클릭한 것 같은 이벤트를 발생시킵니다.
+        setInterval( function(){
+            $('h1').last().trigger('click');
+            //$('h1').last().click();
+        }, 3000);   // 3초에 한 번씩 클릭 이벤트 발생
+    });*/
+    
+    
+    /* 6. 마우스 이벤트 */
+    //-click : 마우스 클릭할 때 이벤트 발생
+    //-dbclick : 마우스 더블클릭할 때 이벤트 발생
+    //-mousedown : 마우스 버튼을 누르고 있을 때 이벤트 발생
+    //-mouseup : 마우스 버튼을 뗄 때 이벤트 ㅂ라생
+    //-mouseenter : 마우스가 요소의 경계 외부에서 내부로 이동할 때 발생
+    //-mouseleave : 마우스가 요소의 경계 내부에서 외부로 이동할 때 발생
+    //-mousemove : 마우스를 움직일 때 발생
+    //-mouseout : 마우스가 요소를 벗어날 때 발생
+    //-mouseover : 마우스가 요소 안에 들어올 때 발생
+    /*$(function(){
+        $('.outer').mouseover(function(){
+            $('body').append('<h3>MouseOver~</h3>');
+        }).mouseenter(function(){
+            $('body').append('<h3>MouseEnter~</h3>')
+        });
+    });*/
+    
+    
+    /* 7. 키보드 이벤트 */
+    // - keydown : 키보드가 눌러질 때 발생
+    // - keypress : 글자가 입력될 때 발생(한글지원X)
+    // - keyup : 키보드가 떼어질 때 발생
+    $(function(){
+        $('textarea').keyup(function(event){
+            var inputlength = $(this).val().length;
+            var remain = 150 - inputlength;
+            $('h1').html(remain);
+            if(remain>=0) $('h1').css('color', 'black');
+            else $('h1').css('color','red');
+        });
+    });
+
+</script>
+</head>
+<body>
+<!--7. 키보드 이벤트-->
+<div>
+    <p>지금 내 생각을</p>
+    <h1>150</h1>
+    <textarea cols="70" rows="5"></textarea>
+</div>
+
+<!--6. 마우스 이벤트-->
+<!--<div class="outer"><div class="inner"></div></div>-->
+
+
+<!-- 5-1) 이벤트 강제 발생-->
+<!--<h1>Start: </h1>
+<h1>Start: </h1>-->
+
+<!-- 5-2) 이벤트 강제 발생-->
+    <!--<h1>TRIGGER</h1>-->
+
+<!--4. 매개변수 context -->
+<!--<div><h1>Header1</h1><p>Paragraph1</p></div>
+<div><h1>Header2</h1><p>Paragraph2</p></div>
+<div><h1>Header3</h1><p>Paragraph3</p></div>-->
+
+
+<!--1 /2 /3 이벤트 연결/제거-->
+<!--<h1>Header-0</h1>
+<h1>Header-1</h1>
+<h1>Header-2</h1>-->
+</body>
+</html>

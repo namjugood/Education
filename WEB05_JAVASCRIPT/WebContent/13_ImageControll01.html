@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    #a1{position:absolute; width:170px; height:255px;border:2px solid black; top:100px; left:100px;}
+</style>
+<script type="text/javascript">
+    var a = 0;
+    function rotate_div(){
+        a=a+20;
+        if(a>360) a=20;
+        document.getElementById("a1").style.webkitTransform = 'rotate('+a+'deg)';
+        // document.getElementById("a1").style.webkitTransform = 'rotate(a deg)'; => X
+    }
+    function init(){
+        timer=window.setInterval(rotate_div, 500);
+    }
+    function stop_rotate(){
+        window.clearInterval(timer);
+    }
+</script>
+</head>
+<body onload="init();">
+<div id='a1'>
+    <img src="images/1.jpg" onmouseover="stop_rotate()" onmouseout="init()">
+</div>
+</body>
+</html>

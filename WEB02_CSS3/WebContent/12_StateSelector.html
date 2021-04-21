@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- 
+	* 상태선택자
+		- 입력 양식의 상태를 선택할 때 사용하는 선택자
+		- 종류
+			. : enabled
+			. : disabled
+			. : focus
+			. : checked 
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>State Selector</title>
+<style type="text/css">
+	input:enabled{background:yellow;}
+	input:disabled{background:green;}
+	input:focus{background:blue;}
+</style>
+</head>
+<body>
+<h2>Enabled</h2>
+<input type="text"/>
+<h2>Disabled</h2>
+<input type="text" disabled/>
+</body>
+</html>

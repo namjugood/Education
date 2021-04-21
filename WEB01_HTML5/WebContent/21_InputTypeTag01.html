@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Input Type 01</title>
+</head>
+<body>
+<!-- 모든 입력 태그들은 대부분 form 태그 안쪽에 쓰여집니다 -->
+<form action="">
+	아이디 : <input type="text"/><br /><!-- 글자 입력 양식 생성 -->      
+	PASSWORD : <input type="password"/><br /> <!-- 비밀번호 입력 양식 생성 -->
+	<hr />
+	첫째<input type="checkbox"/>
+	둘째<input type="checkbox"/>
+	셋째<input type="checkbox"/>
+	<hr />
+	남자<input type="radio" name="gender">
+	여자<input type="radio" name="gender">
+	<!-- 라디오 버튼에 이름을 붙여줌으로써 그룹 형성, 다수의 항목 중 하나만 선택하도록 설정 -->
+	<hr />
+	<select name="dkts">
+			<option value="1">김밥</option>
+			<option value="2">떡볶이</option>
+			<option value="3">튀김</option>
+			<option value="4">순대</option>
+	</select><hr /><!-- 펼침 목록 -->
+	<hr />
+	파일<input type="file" name="selectfile"/><hr /><!-- 파일 입력 양식 생성 -->
+	<hr />
+	<input type="button"	value="클릭"/><<hr />		<!-- 버튼 생성 -->
+	<input type="submit" value="작성완료"/>
+	<input type="reset"  value="다시작성"/><hr />  <!-- 전송 및 취소 버튼 생성 -->
+	<!-- submit과 reset 버튼은 form과 함께 사용되는 버튼으로 name 값이 생략되곤 합니다. -->
+	<input type="hidden"  name="loginuser" value="홍길동"/><hr />
+	<!-- 보이지 않는 입력 양식 생성 -->
+	<textarea cols="50" rows="10"></textarea><hr /><!-- 멀티라인 텍스트 입력란 -->
+	주소 : <input type="text" size="50" placeholder="주소입력"/><hr />
+	<!-- 입력 내용 안내 placeholder는 클릭하고 내용을 입력하면 지워지는 안내문구 -->
+</form>
+</body>
+</html>

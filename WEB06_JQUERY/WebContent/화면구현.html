@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    #layer1{position:relative; width:100%; height:145px; border:1px dashed gray;}
+    .view1{position:relative; width:1025px; height:115px; border:1px dotted red; margin:0 auto; overflow:hidden; }
+    .view2{position:relative; width:1025px; height:30px; border:1px dotted blue; margin:0 auto;}
+    #img_list{ position:absolute; top:0; left:0; width:9225px; height:115px; border:1px dashed blue; z-index:30; }
+    
+    #remote{position:relative; width:220px; height:20px; border:1px dotted blue; float:right; margin-top:4px;}
+    .btns{position:relative; width:18px; height:18px; border:1px solid black; float:left; font-size:90%; font-weight:bold; line-height:18px; text-align:center;}
+    .btns_sel{background:black; color:white;}
+    .btns:hover{cursor:default;}
+    
+</style>
+<script src="script/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    var imgs = ['images/H1.png' , 'images/H2.png' , 'images/H3.png' , 'images/H4.png' , 'images/H5.png','images/H6.png','images/H7.png','images/H8.png','images/H9.png'];
+    
+    var s = '';
+    for(var i=0; i<=8; i++){
+        s += '<img src="' + imgs[i] + '" width="1025" height="115">';
+    }
+    var imgNum = 0;
+    $(function(){
+        $(s).appendTo('#img_list'); 
+        $('#remote div').click(function(){
+            var num = $(this).index();
+            for(var i=0; i<=10; i++) 
+                    $('#remote div:eq(' + i + ')').removeClass('btns_sel');
+            if(num==0){
+                imgNum--;
+                if(imgNum<0) imgNum = 0;
+                $('#img_list').animate( { left: imgNum*1025*(-1) } , 500);
+                $('#remote div:eq(' + (imgNum+1) + ')').addClass('btns_sel');
+                
+            }else if(num==10){
+                imgNum++;
+                if(imgNum>8)imgNum = 8;
+                $('#img_list').animate( { left: imgNum*1025*(-1) } , 500);
+                $('#remote div:eq(' + (imgNum+1) + ')').addClass('btns_sel');
+            }else{
+                imgNum = num-1;
+                $('#img_list').animate( { left: imgNum*1025*(-1) } , 500);
+                $('#remote div:eq(' + num + ')').addClass('btns_sel');    
+            } 
+        });     
+    });
+</script>
+</head>
+<body>
+<div id="layer1">
+    <div class="view1">
+        <div id="img_list"></div>
+    </div>
+    <div class="view2">
+        <div id="remote">
+            <div class="btns">◀</div>
+            <div class="btns btns_sel">1</div>
+            <div class="btns">2</div>
+            <div class="btns">3</div>
+            <div class="btns">4</div>
+            <div class="btns">5</div>
+            <div class="btns">6</div>
+            <div class="btns">7</div>
+            <div class="btns">8</div>
+            <div class="btns">9</div>
+            <div class="btns">▶</div>
+        </div>
+    </div>
+</div>    
+</body>
+</html>

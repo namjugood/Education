@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BOM02</title>
+<script type="text/javascript">
+    // 2. screen 객체
+    // - 웹 브라우저의 화면이 아니라 운영체제 화면의 속성을 가지는 객체.
+    var output = '';
+    for(var key in screen){
+        output += '※ '+key+' : '+screen[key]+'\n';
+    }
+    alert(output);
+    
+    // - 브라우저의 크기를 화면에 일치시키는 방법
+    //  . 팝업창을 생성하고 전체화면으로 만듦. 이에 1초마다
+    //    크기를 변환하고 이동해 점점 가운데로 수렴.
+    
+    var child = window.open('', '', 'width=300, height=200');
+    var width = screen.width;
+    var height = screen.height;
+    child.moveTo(0, 0);
+    child.resizeTo(width, height);
+    
+    setInterval(function(){
+                child.resizeBy(-20, -20);    child.moveBy(10,10);
+                }, 1000);
+    // setInterval(호출할 함수, 반복 인터벌 시간);
+    // setInterval(사용할 선언적 함수 호출 또는 익명함수, 시간간격);
+    // 설정된 시간간격마다 앞에 기술된 함수의 내용을 실행, 1000:1초
+    
+    
+    
+    /*setInterval(abc, 1000);
+    function abc(){
+        child.resizeBy(-20,-20);
+        child.moveBy(10, 10);
+    }*/
+</script>
+</head>
+<body>
+<!--<input type="button" onClick="abc();" value="이동">-->
+</body>
+</html>

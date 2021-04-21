@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rest Server</title>
+    <link rel="stylesheet" href="./05_restFront.css" />
+</head>
+<body>
+<nav>
+    <a href="/">Home</a></br>
+    <a href="/about">About</a></br>
+    <a href="/05_about.html">About2</a></br>
+</nav>    
+<div>
+    <form id="form">
+        <input type="text" id="username">
+        <button type="submit">등록</button>
+    </form>
+</div>
+<div id="list"></div>    
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- 
+1. axios 라이브러리 : jQuery와 같은 종류의 javascript library 파일입니다 
+2. axios는 HTTP통신을 하는데 매우 인기있게 사용되는 라이브러리입니다. 
+3. 브라우저와 Node.js 플랫폼에서 모두 사용 가능합니다.
+4. 현재는 브라우저 상에서 사용하기 위해 src로 로딩한 것이며, Express server에서
+   사용하려면 설치 명령으로 설치 후 사용합니다.
+5. JSON 데이터 자동변환 기능이 있고, get, post, put, delete 등을 다양하게 구분하여
+   request요청이 가능합니다.
+-->
+<script src="./05_restFront.js"></script>
+</body>
+</html>

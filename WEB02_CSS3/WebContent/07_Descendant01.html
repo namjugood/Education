@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- 
+	* 후손선택자 : 특정한 태그 아래에 있는 후손을 선택할 때 사용하는 선택자 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Descendant01</title>
+<style type="text/css">
+	#section h1{color:blue;}
+	/* 빈칸(공백)으로 선택자가 이어지면, 바로 아래 수준에 포함되어 있는 child 선택자만 지목하게 됩니다. */
+	#header h1, #header h3{color:red;}
+	/* ','로 구분하면 두 개의 후손 선택자를 동시 선택 가능합니다. */
+</style>
+</head>
+<body>
+<div id="header">
+	<h1 class="title">회사이름/로고</h1>
+	<div id="nav">
+		<h1>Navigation</h1><h2>header 2</h2><h3>CSS3</h3>
+	</div>
+</div>
+<div id="section">
+	<h1 class="title">Aside</h1>
+	<p>군사법원의 조직, 권한 및 재판관의 자격은 법률로 정한다. 국회의원은 국가이익을 우선하여 양심에
+	따라 직무를 행한다. 국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한
+	계획을 수립한다.</p>
+</div>
+</body>
+</html>

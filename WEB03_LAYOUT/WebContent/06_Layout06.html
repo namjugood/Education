@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>06_Layout06</title>
+<style type="text/css">
+    #first{position:relative; width:100%; height:140px; border:1px dashed black;}
+    #first_text1{position:relative; width:350px; height:70px; margin:0 auto; line-height:70px; text-align:center; font-size:200%; font-weight:bold; border:1px solid red;}
+    #first_text2{position:relative; width:350px; height:70px; margin:0 auto; bottom:0px;
+    border:1px solid blue; font-size:75%; color:gray;}
+    
+    #second{position:relative; width:100%; height:600px; border:1px dashed black;}
+    #view{position:relative; width:1100px; height:600px; border:1px solid red; margin:0 auto;}
+    .rect{position:relative; width:348px; height:600px; border:1px dashed blue; margin-right:25px; float:left;}
+    .image{position:relative; width:100%; height:50%; border:1px solid black; overflow:hidden;}
+    .box{position:absolute; width:300px; height:300px; border:1px solid silver; left:24px; bottom:100px; background:white; box-shadow:5px 5px 5px gray; }
+    .title{position:relative; width:90%; height:90px; border:1px dashed blue; margin:0 auto; text-align:center; line-height:90px; font-weight:bold; font-size:150%;}
+    .text{position:relative; width:90%; height:69%; border:1px dashed blue; margin:0 auto;font-size:80%;}
+    
+    input[type=button]{position:absolute; width:150px; height:35px; border:1px solid blue; z-index:1 
+    float:right; right:0px; bottom:80px; background:blue;  line-height:10%;}
+    .font{font-family:'Times New Roman'; font-size:150%; color:white; font-weight:bold;}
+</style>
+</head>
+<body>
+<div id="first">
+    <div id="first_text1">Content Title</div>
+    <div id="first_text2">저작자·발명가·과학기술자와 예술가의 권리는 법률로써 보호한다. 대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다.</div>
+</div>
+<div id="second">
+   <div id="view"> 
+       <div class="rect">
+           <div class="image"><img src="images/Penguins.jpg" height="300"></div>
+           <div class="box">
+               <div class="title">Segment Title</div>
+               <div class="text">저작자·발명가·과학기술자와 예술가의 권리는 법률로써 보호한다. 대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다.</div>
+           </div>
+           <input type="button" value="button" class="font">
+       </div>
+       <div class="rect">
+           <div class="image"><img src="images/Lighthouse.jpg" height="300"></div> 
+           <div class="box">
+               <div class="title">Segment Title</div>
+               <div class="text">저작자·발명가·과학기술자와 예술가의 권리는 법률로써 보호한다. 대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다.</div>
+           </div>
+           <input type="button" value="button" class="font">
+       </div>
+       <div class="rect" style="margin-right:0px;">
+           <div class="image"><img src="images/Jellyfish.jpg" height="300"></div> 
+           <div class="box">
+               <div class="title">Segment Title</div>
+               <div class="text">저작자·발명가·과학기술자와 예술가의 권리는 법률로써 보호한다. 대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다.</div>
+           </div>
+           <input type="button" value="button" class="font">
+       </div>  
+   </div>
+</div>
+        
+</body>
+</html>

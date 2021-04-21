@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    #layer1{position:relative; width:100%; height:145px; border:1px dashed gray;}
+    .view1{position:relative; width:1025px; height:115px; border:1px dotted red; margin:0 auto; /*overflow:hidden;*/ }
+    .view2{position:relative; width:1025px; height:30px; border:1px dotted blue; margin:0 auto;}
+    #imgs{position:absolute; width:9225px; height:115px; border:1px solid blue; top:0px; left:0px; transition:0.5s;}
+    body{overflow-x:hidden;}
+    .remote{position:relative; width:240px; height:20px; border:1px dotted blue; float:right; margin-top:4px;}
+    .btns{position:relative; width:18px; height:18px; border:1px solid black; float:left; font-size:90%; font-weight:bold; line-height:18px; text-align:center;}
+    .btns:hover{cursor:default;} // btns들 위에 마우스포인터가 올라가면 모양을 기본으로 표시
+</style>
+<script type="text/javascript">
+    var tag = '';
+    var banners = ['images/H1.png', 'images/H2.png', 'images/H3.png', 'images/H4.png', 'images/H5.png', 'images/H6.png', 'images/H7.png', 'images/H8.png', 'images/H9.png'];
+    
+    /*tag -> "<div id="imgs"><img src='images/H1.png'><img src='images/H2.png'>...<img src='images/H9.png'></div>*/
+    
+    tag += '<div id="imgs">'
+    for(var i=0; i<=8; i++)
+        tag += '<img src="' + banners[i] +'">'
+    tag += '</div>';
+    
+    var num=0;
+    var statusAuto="off";
+    
+    function AutoOnOff(){
+        if( statusAuto == "off" ){
+            statusAuto = "on";
+            timer = window.setInterval("move()", 1000);
+            document.getElementById("btnA").innerHTML = "■";
+        }else{
+            statusAuto = "off";
+            document.getElementById("btnA").innerHTML = '▶';
+            window.clearInterval(timer);
+        }
+    }
+    function move(){
+    num++;
+    if(num>8)num=0;
+    var k = num*1025*(-1);
+    document.getElementById("imgs").style.left = k +'px';
+    changeColor();
+    }
+
+    function movebtn(n){
+        if(statusAuto=="on") return;
+        num=n;
+        var k=-1*num*1025;
+        document.getElementById("imgs").style.left=k+"px";
+        changeColor();
+    }
+    function changeColor(){
+        for(var i=1;i<=9;i++){
+            document.getElementById("btn"+i).style.background='white';
+            document.getElementById("btn"+i).style.color='black';
+        }
+        document.getElementById("btn"+(num+1)).style.background='black';
+        document.getElementById("btn"+(num+1)).style.color='white';
+    }
+     function moveLeft(){
+        if(statusAuto=="on") return;
+        num--;
+        if(num<0) num=0; 
+        var k=-1*num*1025;
+        document.getElementById("imgs").style.left=k+"px";
+        changeColor();
+    }
+    function moveRight(){
+        if(statusAuto=="on") return;
+        num++;
+        if(num>8) num=8;
+        var k=-1*num*1025;
+        document.getElementById("imgs").style.left=k+"px";
+        changeColor();
+    }
+</script>
+</head>
+<body>
+<div id="layer1">
+    <div class="view1">
+        <!-- 배너 표시 구간 -->
+        <script type="text/javascript">
+            document.write(tag);
+        </script>
+    </div>
+    <div class="view2">
+        <!-- 버튼 표시 구간 -->
+        <div class="remote">
+            <div class="btns" id="btnL" onClick="moveLeft();">◁</div>
+            <div class="btns" id="btn1" onClick="movebtn(0);">1</div>
+            <div class="btns" id="btn2" onClick="movebtn(1);">2</div>
+            <div class="btns" id="btn3" onClick="movebtn(2);">3</div>
+            <div class="btns" id="btn4" onClick="movebtn(3);">4</div>
+            <div class="btns" id="btn5" onClick="movebtn(4);">5</div>
+            <div class="btns" id="btn6" onClick="movebtn(5);">6</div>
+            <div class="btns" id="btn7" onClick="movebtn(6);">7</div>
+            <div class="btns" id="btn8" onClick="movebtn(7);">8</div>
+            <div class="btns" id="btn9" onClick="movebtn(8);">9</div>
+            <div class="btns" id="btnR" onClick="moveRight();">▷</div>
+            <div class="btns" id="btnA" onClick="AutoOnOff();">▶</div>
+            <!-- AutoOnOff가 on이면 다른 버튼이 클릭되지 않게, 버튼의 모양을 ■로 변경합니다.
+            다시 ■을 클릭하면 원래대로 복구되면서 나머지 버튼을 작동가능하게 합니다.
+            자동 버튼 on 상태에서는 2초에 한 번씩 이미지가 롤링되게 하며, 마지막에 다다르면 첫 
+            번째로 이동하도록 합니다.-->
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>

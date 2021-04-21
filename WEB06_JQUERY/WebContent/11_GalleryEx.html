@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>11_GalleryEx.html</title>
+<style type="text/css">
+    #gallery{position:relative; margin:0 auto; width:1080px; height:400px; border:1px solid red; margin-top:100px; overflow:hidden;}
+    #img_list{ position: absolute; top:0; left:0; width:6480px; height:400px; border:1px dashed blue;}
+    #remote{position:absolute; bottom:0px; right:0px; width:280px; height:80px; z-index:20; border:1px solid white;}
+    .re{float:left; width:16px; height:16px; border-radius:50%; margin:3px; background:white; margin-top:30px}
+.re_sel{width:48px; border-radius:8px 8px 8px 8px; }
+</style>
+<script src="script/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    var imgs = ['images/Desert.jpg' , 'images/Tulips.jpg' , 'images/Jellyfish.jpg' , 'images/Lighthouse.jpg' , 'images/Chrysanthemum.jpg','images/Koala.jpg'];
+    // 이미지 경로와 파일 이름을 배열로 생성
+
+    var s = '';
+    for(var i=0; i<=5; i++)
+    s += '<img src="' + imgs[i] + '" width="1080" height="400">';
+    var imgNum = 0
+    var autoState = 'off';
+    $(function(){
+        $(s).appendTo('#img_list'); 
+        $('#remote div').click( function(){
+            var num = $(this).index();
+            for(var i=0; i<=8; i++) 
+                $('#remote div:eq(' + i + ')').removeClass('re_sel');
+            if(num==0){
+                if(autoState=='on') return;
+                    imgNum--;
+                    if(imgNum<0) imgNum = 0;
+                        $('#img_list').animate( { left: imgNum*1080*(-1) } , 500);
+                        $('#remote div:eq(' + (imgNum+1) + ')').addClass('re_sel');
+            }else if(num==7){
+                if(autoState=='on') return;
+                    imgNum++;
+                    if(imgNum>5)imgNum = 5;
+                        $('#img_list').animate( { left: imgNum*1080*(-1) } , 500);
+                        $('#remote div:eq(' + (imgNum+1) + ')').addClass('re_sel');
+            }else if(num==8){
+                $('#remote div:eq(' + (imgNum+1) + ')').addClass('re_sel');
+                if(autoState=='off'){
+                    autoState='on';
+                    timer = window.setInterval(function(){
+                        imgNum++;
+                        if(imgNum>5)imgNum = 0;
+                            $('#img_list').animate( { left: imgNum*1080*(-1) } , 500);
+
+                        for(var i=0; i<=8; i++) 
+                            $('#remote div:eq(' + i + ')').removeClass('re_sel');
+                        $('#remote div:eq(' + (imgNum+1) + ')').addClass('re_sel'); 
+                        },1500);
+                }else{
+                    window.clearInterval(timer);
+                    autoState='off';
+                } 
+            }else{
+                if(autoState=='on') return;
+                imgNum = num-1;
+                $('#img_list').animate( { left: imgNum*1080*(-1) } , 500);
+                $('#remote div:eq(' + num + ')').addClass('re_sel');
+            }
+        });
+    });
+</script>
+</head>
+<body>
+<div id="gallery">
+    <!--이동할 메인 이미지들-->
+    <div id="img_list"></div><!--appendTo 를 이용해서 이미지 첨부-->
+
+    <!--우측하단 리모콘-->
+    <div id="remote">
+        <div style="margin-left:30px; text-align:center; font-weight:bold; line-height:16px;" class="re">◀</div>
+        <div class="re re_sel"></div>
+        <div class="re"></div>
+        <div class="re"></div>
+        <div class="re"></div>
+        <div class="re"></div>
+        <div class="re"></div>
+        <div style = "text-align:center; font-weight:bold;line-height:16px" class="re">▶</div>
+        <div style = "text-align:center; font-weight:bold;line-height:16px" class="re">A</div>
+    </div>
+</div> 
+</body>
+</html>

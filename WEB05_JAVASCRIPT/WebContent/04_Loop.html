@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>04 Loop</title>
+<style type="text/css"></style>
+<script type="text/javascript">
+    /* 1. while 반복문 
+    // 예제1 - 반복실행 while문
+    var value = 1;
+    var s = "";
+    while(value < 5){
+        alert(value+'번 째 반복');
+        s = s + value + "번 째 반복\n";
+        value++;
+    }
+    alert(s);
+    
+    // 예제2 - 반복실행 while문
+    var value = 0;
+    var startTime = new Date().getTime();
+    var endTime = startTime+2000;
+    while(new Date().getTime() < endTime){
+        value++;
+    }
+    alert(startTime);
+    alert(endTime);
+    alert(value);
+    */
+    
+    /* 2. do~ while 반복문 
+    var value = 1;
+    do{
+        alert(value+'번째 반복.');
+        value++;
+    }while(value <=5);
+    */
+    /* 3. for 반복문 
+    var array = ['포도', '사과', '바나나', '망고'];
+    for(var i=0;i<array.length; i++){
+        alert(array[i]);
+    }
+    */
+    /* 4. for in 반복문 
+    var array = ['포도', '사과', '바나나', '망고'];
+    for(var a in array){
+        alert(a+" "+array[a]);
+    }
+    /* Java 반복문과 유사
+    for(String a : array) 
+        alert(a);*/
+    
+    /* 반복실행문과 배열, switch문을 이용해서 년, 월, 일을 입력받고 요일을 출력하는 코드를 작성하세요*/
+    
+    var date = new Date();
+    var ty = date.getFullYear();
+    var tm = date.getMonth()+1;
+    var td = date.getDate();
+    var mdays = [0,31,28,31,30,31,30,31,31,30,31,30,31];
+    ty = String(ty);
+    tm = String(tm);
+    td = String(td);
+    var y = Number(prompt('년도를 입력하세요', ty));
+    var m = Number(prompt('월을 입력하세요', tm));
+    var d = Number(prompt('일을 입력하세요', td));
+    
+    days = (y-1)*365; //입력된 년도의 전년도까지 *365
+    for(var i=1; i<=(y-1); i++)
+        if((i%4==0) && (i%100!=0) || (i%400==0))
+            days++; //입력된 년도의 전년도까지 윤년을 검사해서 +1
+    
+    if((y%4==0) && (y%100!=0) || (y%400==0))
+        mdays[2] = 29;  //입력된 년도가 윤년이면 2월 날짜수 29로
+    for(var i=1; i<=(m-1); i++)
+        days += mdays[i]; // 월에 해당하는 날짜 계산
+    days += d;  // 입력된 일에 해당하는 날짜 계산
+    var s = y+"년 "+m+"월 "+d+"일은 ";
+    switch(days%7){
+        case 1 : s = s + "월요일입니다"; break;
+        case 2 : s = s + "화요일입니다"; break;
+        case 3 : s = s + "수요일입니다"; break;
+        case 4 : s = s + "목요일입니다"; break;
+        case 5 : s = s + "금요일입니다"; break;
+        case 6 : s = s + "토요일입니다"; break;
+        case 0 : s = s + "일요일입니다"; break;        
+    }
+    alert(s);
+</script>
+</head>
+<body>
+    
+</body>
+</html>

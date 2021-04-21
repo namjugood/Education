@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Image Tag</title>
+</head>
+<body>
+<!-- 프로젝트 내부에 파일을 보유하고 있을 때 -->
+<img src="image/daumlogo.png" width="200" /><br />
+<!-- src : 이미지의 경로와 파일 이름 -->
+<!-- 그 외 속성 width:가로크기, height:세로크기 -->
+<!-- width와 height 중 하나만 조정하면 나머지 크기는 비율에 맞춰서 자동 조정됩니다. -->
+<!-- 다만 비율을 생각하지 않고 width와 height를 동시에 저장하면 비율이 틀어져서 언밸런스해질 수 있습니다. -->
+<img src="image/facebook.jpg" width="200" height="70"><br />
+<img src="image/nate.png" width="200"><br />
+<img src="image/naver.png" width="200"><br />
+<img src="image/twiter.jpg" width="200"><br />
+
+<!-- 인터넷 상에 이미 게시된 이미지를 같이 URL로 가지고 와서 표시하고자 할 때 -->
+<img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" ><br />
+<img src="https://t1.daumcdn.net/b2/creative/129175/ba0ffc1146d1232fdd83eeb2c0547490.jpg"><br />
+<!-- 인터넷의 이미 게시된 이미지의 URL을 얻는 방법 : 이미지 위에서 마우스 오른쪽 버튼을 클릭하고 
+속성창을 열면 확인할 수 있다.
+- 크롬은 마우스 오른쪽 버튼 메뉴에서 이미지 주소 복사 클릭
+- 다만 일부 그림들은 공개하지 않을 목적으로 URL을 분산하여 식별이 어렵게 하거나
+마우스 우클릭을 못하게 하기도 합니다(자바스크립트 이용) -->
+
+<br /><br /><br />
+<!-- 이미지의 URL이 맞지 않거나 해당 이미지가 이름이 틀리거나 실제 이미지가 존재하지 않아 이른바
+엑박이 나올때, 풍선 도움말 형식의 안내문을 표시합니다 -->
+<img alt="그림이 존재하지 않습니다." src="images/abcd.jpg"><br /><br />
+
+<br /><br /><br />
+
+<!-- 이미지 태그를 Anchor 태그로 감싸고 클릭하면 이동하는 하이퍼 미디어로 사용됩니다. -->
+<a href="https://www.daum.net" target="_blank">
+	<img src="image/daumlogo.png" width="200">
+</a>
+
+
+<br />
+</body>
+</html>

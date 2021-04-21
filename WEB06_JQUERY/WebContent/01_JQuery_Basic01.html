@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--jQueary 기본
+1. jQuery 개요
+    - 모든 브라우저에서 동작하는 클라이언트 자바스크립트 라이브러리.
+    - 다음의 기능을 위해 제작
+        . DOM과 관련된 처리를 쉽게 구현
+        . 일관된 이벤트 연결을 쉽게 구현
+        . 시각적 효과를 쉽게 구현
+        . ajax 어플리케이션을 쉽게 구현
+    - 관련사이트 -> http://jquery.com
+    - jQuery 사용방법
+        1) 직접 다운받아 사용하는 방법
+        2) CDN 호스트 사용하는 방법
+            . Content Delivery Network
+            . 사용자에게 간편하게 콘텐츠를 제공하는 방식을 의미.
+            . 구글, 마이크로소프트, jQuery 측에서 사용자가 jQuery를 사용하기 편하게 콘텐츠를 제공-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery Basic 01</title>
+<!--jQuery는 내장 라이브러리가 아니기 때문에 시작과 함께 불러와서 창작 내지는 import하는 동작이 필요합니다.-->
+<!-- 1. 라이브러리 포함 방법 : 2가지 방식
+방법 1 직접 다운로드(익스플로러에서 다운)-->
+<script src="script/jQuery-3.5.1.js"></script>
+<!--<script src="script/myscript.js"></script>-->
+
+<!--방법 2 링크 연결
+<script src="http://code.jquery.com/jquery-3.5.1.js"></script> -->
+<script type="text/javascript">
+/* 2. jQuery를 사용한 웹페이지 형식*/
+    //가. $(document).ready(function(){ alert("First Ready"); });
+    //나. onload 이벤트와 유사한 동작
+    //다. 문서가 준비완료되면 매개변수가 전달된 함수를 실행하라는 의미
+    //라. $(명령을 내릴 포커싱 대상).명령 또는 상태 이벤트(실제 동작할 익명함수)
+    //마. 누군가가 변화가 있다면, 익명함수와 같이 실행하세요 - jQuery 명령의 평소 형식
+    //$(document).ready(function(){ alert("First Ready"); });
+    // 위 구문에서 ready 괄호 안의 익명함수가 쓰인 영역은
+    // 현재 페이지의 jQuery구문이 모두 들어가서 실행하게 되는 곳입니다.
+    // 여러 개가 쓰여져도 상관없으나 그 안에 명령을 넣지 않으면 jQuery 명령은 실행되지 않습니다.
+    // 그리고 앞으로의 구문은 아래와 같이 짧은 구문으로 대신합니다.
+    // (document).ready 생략
+    /*$(function() { 
+        alert("First Ready 2"); 
+    });*/
+    /*$( function() {alert("First Ready 2");} );*/
+    
+    // alert("Second Ready");   // 잘못된 예
+    // $("#tit").css("color","red");    // 잘못된 예
+    
+    /*$(function(){
+        alert("Third Ready");   // 올바른 예
+        $("#tit").css("color","red");   // 올바른 예
+    });*/
+    
+    /* 3. jQuery 기본 선택자 */
+    // - jQuery 메서드의 가장 기본적인 형태
+    //   . 문서 객체를 다룰 때 사용하는 형태
+    //   . jQuery에서 가장 많이 사용하는 형태
+    //  1) 전체 선택자(*)
+    /*$(function(){
+        $("*").css("border","3px dashed blue");
+    });*/
+    
+    //  2) 태그 선택자
+    /*$(function(){
+        $("h2").css("background","#0ff").css("border","2px dashed #f00");
+    });*/
+    
+    //두 개 이상의 태그 선택
+    /*$(function(){
+        $("h1, h2").css("background-color","#0ff").css("border","2px dashed #f00");
+    });*/
+    
+    //  3) 아이디 선택자
+    $(function(){
+        $("#tit").css("background-color","#ff0").css("border","2px solid #f00").css("font-size","250%");
+    })
+    
+    //  3) 클래스 선택자
+    $(function(){
+        $(".tit2").css("background-color","#ff0").css("border","2px dashed #f00").css("font-size","250%");
+    });    
+    
+    //  4) 종속 선택자
+    $(function(){
+        $("h1#tit").css("color","#00f");
+    });
+    
+</script>
+</head>
+<body>
+<h1 id="tit">제목</h1>
+<h1>제이쿼리</h1>
+<h2>선택자</h2>
+<h3>직접 선택자</h3>
+<h1 class="tit2">제목</h1>
+</body>
+</html>

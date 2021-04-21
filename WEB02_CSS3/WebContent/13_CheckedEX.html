@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CheckedEX</title>
+<style type="text/css">
+	div{width:650px;height:300px;background:silver;transition-duration:2s;overflow:hidden;}
+	input[type=checkbox]:checked+div{height:0px;}
+	/* hover active checked focus 등등 마우스 움직임에 반응하는 선택자들은 자신들의 변화를 포함하여 철저하게 
+	후손선택자와 인접선택자의 대상에만 적용이 가능합니다
+	형제이거나 자식인 경우에만 적용 , 자바스크립트나 제이쿼리에서 구현가능 */
+</style>
+</head>
+<body>
+<input type="checkbox" />	체크하면 아래 텍스트가 사라집니다
+<div>
+<h1>Lorem ipsum</h1>
+<p>국정의 중요한 사항에 관한 대통령의 자문에 응하기 위하여 국가원로로 구성되는 국가원로자문회의를 둘 수 있다. 국가는 건전한 
+소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 국가안전보장회의의 
+조직·직무범위 기타 필요한 사항은 법률로 정한다.</p>
+</div>
+</body>
+</html>

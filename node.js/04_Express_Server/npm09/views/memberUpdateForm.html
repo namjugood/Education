@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원정보변경</title>
+</head>
+<body>
+    <form id="memberUpdate">
+        <table>
+            <tbody>
+                <tr><td>아이디 : {{member.userid}}</td><td><input type="hidden" name="id" value="{{member.userid}}"></td></tr>
+                <tr><td>비밀번호 :</td><td><input type="password" id="pw"></td></tr>
+                <tr><td>이름 :</td><td><input type="text"     id="name"  value="{{member.name}}">     </td></tr>
+                <tr><td>전화번호 :</td><td><input type="text"     id="phone" value="{{member.phone}}">    </td></tr>
+                <tr><td>이메일 :</td><td><input type="text"     id="email" value="{{member.email}}">    </td></tr>
+                <tr>
+                    <td>
+                        <button type="submit" >수정</button>
+                        <button type="reset">다시작성</button>
+                        <input type="button" value="취소" onclick="location.href='/main'"></input>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="/updateMembers.js"></script>
+    </form>
+</body>
+</html>

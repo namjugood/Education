@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    #base{position:relative; width:495px; height:305px; border:1px solid black; margin:0 auto;}
+    #subject{position:relative; width:410px; height:65px; border:1px dotted black; margin:0 auto; font-size:150%; font-weight:bold; line-height:65px;}
+    .movie{position:relative; width:410px; height:35px; border-top:2px dotted silver; font-size:150%; font-weight:bold; overflow:hidden;}
+    .imgs{display:none; position:relative; width:65px; height:90px; margin-top:10px; float:left; margin-right:20px; background:silver;}
+    #img1{background-image:url(images/nm1.png;);}
+    
+    .box{position:relative; width:321px; /*height:113px;*/ border:1ps border:1px dashed red; float:left;}
+    
+    .title{width:321px; height:30px; border:1px dashed blue; font-size:65%; line-height:30px; color:blue; font-weight:bold;}
+    .text{display:none; width:321px; height:80px; border:1px dashed blue; font-size:45%; line-height:25px; color:black;}
+    .star{position:absolute; right:0px; top:0px; line-height:30px; font-size:70%; font-weight:bold; border:1px dotted red;}
+    
+    .movie:hover{height:113px;}
+    .movie:hover .imgs{display:inline-block;}
+    .movie:hover .text{display:inline-block;}
+</style>
+</head>
+<body>
+<div id="base">
+    <div id="subject">개봉영화평점</div>
+    <div class="movie">
+        <div class="imgs" id="img1"></div>
+        <div class="box">
+            <div class="title">온워드: 단 하루의 기적</div>
+            <div class="text">픽사 영화는 묘한 뭔가가 있음. 보고 나온 뒤에 시간이 지날....<br>아빠가 없는 우리 꼬맹이랑 같이 봤어요..저혼자 울면소 보았...<br>별 기대 없이봤는데 너무 재미있었어요^^</div>
+     </div>
+     <div class="star"><span style="color:red">★★★★</span>★ 8.96</div>   
+    </div>
+    <div class="movie"></div>
+    <div class="movie"></div>
+    <div class="movie" style="border-bottom:2px dotted silver;"></div>
+</div>
+</body>
+</html>

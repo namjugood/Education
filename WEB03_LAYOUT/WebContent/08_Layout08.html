@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Layout08</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<style type="text/css">
+    body{margin:0px;}
+    img{vertical-align:middle;}
+    #first{position:relative; width:100%; height:40px; float:left; border-bottom:1px solid silver; margin:0 auto;}
+    #first_view{position:relative; width:1100px; height:38px; margin:0 auto; }
+        #logo{position:relative; width:50px; height:38px; float:left; line-height:100px; text-align:center; line-height:40px;    }
+        #right_function{position:relative; width:190px; height:38px; float:right; line-height:38px;}
+    #ul01{list-style:none; padding:0px; margin:0px; float:right;}
+    #ul01 li{float:left; width:60px; text-align:center; line-height:38px; }
+    
+    #second{position:relative; width:100%; height:99px; border-bottom:1px solid silver; float:left;}
+    #second_view{position:relative; width:1100px; height:98px; margin:0 auto; }
+    .second_ctgr{position:relative; width:80px; height:98px; float:left; font-size:30px; line-height:98px; font-weight:bold; text-align:center; font-family: 'Noto Sans KR', sans-serif;}
+    #search{position:relative; width:240px; height:29px; float:right; text-align:center; border:1px solid silver; margin:33px 10px; line-height:30px;}
+    #sc_font{position:relative; width:198px; height:23px; border:0px; float:left; margin:3px;}
+    
+    #third{position:relative; width:100%; height:70px; float:left; margin:2px}
+    #third_view{position:relative; width:1100px; height:100%; margin:0 auto; }
+    #third_left{position:relative; width:700px; height:70px; float:left;}   
+    
+    #ul03{list-style:none; margin:0px; line-height:70px; padding-left:15px; float:left;}
+    #ul03 li{font-size:105%; float:left; margin-right:30px; font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+    #ul03 li:first-child{font-size:105%; float:left; margin-right:30px; font-weight:bold; border-bottom:5px solid red; color:red;}
+    #ul03 li:last-child{font-size:105%; float:left; margin-right:30px; font-weight:bold; color:red;}
+    #ul03 li{font-size:105%; float:left; margin-right:30px; font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+    #ul03 li:hover{border-bottom:5px solid red;}
+    
+    #third_right{position:relative; width:80px; height:70px; float:right; line-height:70px;}
+    #third_score{position:relative; float:right; font-size:105%; font-weight:bold; font-family: 'Noto Sans KR', sans-serif; right:30px;}
+    
+#forth{position:relative; width:100%; height:440px; border:1px solid silver; background:#383838; float:left;}
+    #forth_view{position:relative; width:1230px; height:440px; margin:0 auto; }
+   
+    #forth_center{position:relative; width:1100px; height:440px; margin:0 auto;float:left;}
+        #forth_top{position:relative; width:1100px; height:75px; float:left; margin:0 auto;}
+    
+        #top_box{position:relative; width:369px; height:75px; margin:0 auto; text-align: center; line-height:75px; }
+
+        #ul04{list-style:none; margin:0px; padding:0px; }
+        #ul04 li{font-size:95%; float:left; margin-right:11px;  color:white;}
+        #ul04 li:hover{color:red; text-decoration:underline; }
+
+        .box{position:relative; width:199px; height:363px;  float:left; margin-right:17pt;}
+        .images{position:relative; width:100%; height:260px; margin-bottom: 5px}
+        .texts{position:relative; width:100%; height:93px; float:left; line-height:15px;}
+        .title1{font-size:105%; color:white; width:100%; height:45px; line-height:55px }
+    .open{width:90px; height: 45px; font-size:90%; float:left; color:#777676;}
+    .book{width:90px; height: 45px; font-size:90%; float:right; text-align:right; color:white; text-decoration:underline; }
+    #forth_left{position:relative; width:62px; height:440px; margin:0 auto; float:left;}
+    
+    #forth_right{position:relative; width:62px; height:440px; margin:0 auto; float:left;}
+    
+    #lbutton{position:relative; width:55px; height:55px; margin-top:180px; background-image:url(images/ico_movie_171115.png); background-position:0 -180px;}
+    
+    #rbutton{position:relative; width:55px; height:55px; margin-top:180px; background-image:url(images/ico_movie_171115.png); background-position:-60px -180px;}
+</style>
+</head>
+<body>
+<div id="first">
+   <div id="first_view">
+        <div id="logo">
+            <img src="images/logo_minidaum.png" width="45">
+        </div>
+        <div id="right_function">
+            <ul id="ul01">
+                <li><img src="images/log.png"></li>
+                <li><img src="images/mail.png"></li>
+                <li><img src="images/all.png"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="second">
+    <div id="second_view">
+        <div class="second_ctgr">영화</div>
+        <div class="second_ctgr">연예</div>
+        <div id="search">
+            <input type="text" id="sc_font" placeholder="  통합검색">
+            <img src="images/search.png" height="25">
+        </div>
+        
+    </div>
+</div> 
+<div id="third">
+  <div id="third_view">
+   <div id="third_left">
+        <ul id="ul03">
+            <li>&nbsp;홈&nbsp;</li>
+            <li>현재상영/개봉예정</li>
+            <li>박스오피스</li>
+            <li>뉴스</li>
+            <li><img src="images/ico_new.gif">'올드 가드'3분 시사회</li>
+        </ul>
+    </div>
+    <div id="third_right">
+        <div id="third_score">내평점</div>
+    </div>
+    </div>
+</div>
+<div id="forth">
+    <div id="forth_view">
+        <div id="forth_left">
+            <div id="lbutton"></div>
+        </div>         
+        <div id="forth_center">
+            <div id="forth_top">
+               <div id="top_box">
+                    <ul id="ul04">
+                        <li>실시간 예매순위</li>
+                        <li>박스오피스</li>
+                        <li>개봉예정작</li>
+                        <li>인기뉴스</li>
+                    </ul>
+               </div>    
+            </div>
+               <div class="box">
+                    <div class="images">
+                        <img src="images/list1.png" width="200" height="260">
+                    </div>
+                    <div class="texts">
+                        <div class="title1">유열의 음악앨범</div>
+                        <div class="open">20.12.10 개봉</div>
+                        <div class="book">예매</div>
+                    </div>
+                </div>
+                 <div class="box">
+                    <div class="images">
+                        <img src="images/list2.png" width="200" height="260">
+                    </div>
+                    <div class="texts">
+                        <div class="title1">엑시트</div>
+                        <div class="open">20.12.10 개봉</div>
+                        <div class="book">예매</div>
+                    </div>
+                </div>
+                 <div class="box">
+                    <div class="images">
+                        <img src="images/list3.png" width="200" height="260">
+                    </div>
+                    <div class="texts">
+                        <div class="title1">변신</div>
+                        <div class="open">20.12.10 개봉</div>
+                        <div class="book">예매</div>
+                    </div>
+                </div>
+                 <div class="box">
+                    <div class="images">
+                        <img src="images/list4.png" width="200" height="260">
+                    </div>
+                    <div class="texts">
+                        <div class="title1">분노의 질주 홉스&amp;쇼</div>
+                        <div class="open">20.12.08 개봉</div>
+                        <div class="book">예매</div>
+                    </div>
+                </div>
+                 <div class="box" style="margin-right:0pt;">
+                    <div class="images">
+                        <img src="images/list5.png" width="200" height="260">
+                    </div>
+                    <div class="texts">
+                        <div class="title1">광대들</div>
+                        <div class="open">20.12.17 개봉</div>
+                        <div class="book">예매</div>
+                    </div>
+                </div>
+        	</div>
+        <div id="forth_right">
+            <div id="rbutton"></div>
+        </div>  
+    </div>
+</div>
+</body>
+</html>

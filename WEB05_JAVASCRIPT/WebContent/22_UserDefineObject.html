@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script type="text/javascript">
+    // 1. 사용자 정의 객체 생성     - 키 : 요소
+    /*var product = {
+        name : '냉장고',
+        제조사 : '대한민국'
+    };
+    // var product = {}; 
+    document.write("name : "+ product.name, "<br/>");
+    document.write("제조국 : "+ product.제조사, "<br/>");
+    document.write("name : "+ product['name'], "<br/>");
+    document.write("name : "+ product['제조사'], "<br/>");*/
+    // 위의 내용과 같이 자바스크립트의 객체는 별도의 클래스 정의 없이, 멤버변수에 값을 넣으며 클래스 생성 및 객체 생성을 한 번에 진행합니다.
+    
+    // 2. 객체의 속성과 메서드
+    // - 속성 : 객체 내부에 있는 하나하나의 값.
+    // - 객체의 속성이 가질 수 있는 자료형
+    /*var object = {
+        useNuber : 273,
+        useString : '문자열',
+        useBoolean : true,
+        useArray : [52, 385, 103, 58],
+        
+        method:function(){
+            document.write("useNumber : " + this.useNumber, "<br/>");
+            document.write("useString : " + this.useString, "<br/>");
+        }   // method : 사용할 함수 이름(변수 이름, function(){} : 익명함수)
+    };
+    // - this 키워드 : 자바스크립트의 멤버함수에서 멤버변수에 접근할 때는 this 키워드를 생략할 수 없습니다.
+    object.method();
+    var person = {
+        name : '홍길동',
+        eat:function(food){
+            document.write(this.name+'이/가 '+food+'을/를 먹었습니다.', "<br/>");
+        }
+    };
+    person.eat('김밥');*/
+    
+    // 3. 객체와 반복문
+    /*var product = {
+        name : 'Eclipse & Tomcat',
+        price : 'Free',
+        language : '한국어',
+        supportOS : 'win32/64',
+        subscripton : true
+    };
+    var output = '';
+    for(var k in product){
+        output += '※ '+k+ ' : '+ product[k] + '<br>';
+    }
+    // for(var k in 배열 또는 객체) 반복문의 반복하는 요소로 배열이 지정되면 인덱스들이 k에 차례로 할당되며 반복실행을 진행하고, 객체가 지정되면 멤버 변수의 이름들이 k에 차례로 할당되며 반복을 진행합니다.
+    document.write(output);*/
+    
+    // 4. 객체와 관련된 키워드
+    /*var student = {
+        이름 : '홍길동',
+        국어:92,
+        수학:98,
+        영어:96,
+        과학:98
+    };
+    //- in 키워드 : 해당 키가 객체 안에 있는지 확인
+    var output = '';
+    output += "'이름' in student: " + ('이름' in student)+'<br/>';
+    output += "'국어' in student: " + ('국어' in student)+'<br/>';
+    output += "'수학' in student: " + ('수학' in student)+'<br/>';
+    output += "'영어' in student: " + ('영어' in student)+'<br/>';
+    output += "'과학' in student: " + ('과학' in student)+'<br/>';
+    output += "'성별' in student: " + ('성별' in student);
+    
+    document.write(output);*/
+    
+    // - with 키워드 : 복잡하게 사용해야 하는 코드를 짧게 줄여주는 키워드
+    /*var student = {
+        이름 : '홍길동',
+        국어:92,
+        수학:98,
+        영어:96,
+        과학:98 };
+    // .with 키워드를 사용하지 않은 경우
+    var write = '';
+    write += '이름 : ' + student.이름+'<br/>';
+    write += '국어 : ' + student.국어+'<br/>';
+    write += '수학 : ' + student.수학+'<br/>';
+    write += '영어 : ' + student.영어+'<br/>';
+    write += '과학 : ' + student.과학+'<br/>';
+    document.write(write);
+    
+    // .with 키워드를 사용한 경우
+    write = '';
+    with(student){
+        write += '이름 : ' + 이름 +'<br/>';
+        write += '국어 : ' + 국어 +'<br/>';
+        write += '수학 : ' + 수학 +'<br/>';
+        write += '영어 : ' + 영어 +'<br/>';
+        write += '과학 : ' + 과학 +'<br/>';
+    }
+    document.write(write);*/
+    
+    // 5. 객체 속성 추가와 제거
+    // - 동적 속성 추가/제거 : 처음 객체를 생성하는 시점 이후에 객체의 속성을 추가 및 제거하는 것
+    // 빈 객체를 생성
+    /*var student = {};
+    // 동적으로 속성을 추가
+    student.이름 = '홍길동';
+    student.취미 = '악기';
+    student.특기 = '프로그래밍';
+    student.장래희망 = '훌륭한 프로그래머';
+    student.toString = function(){  //동적으로 메서드 추가
+        var ouput = '';
+        for(var key in this)    // 현재 객체의 모든 멤버들을 대상으로 반복 실행
+            if(key != 'toString') // 자기 자신 toString 제외하고 나머지 실행
+                output = key + ' : ' + this[key] + '<br/>';
+            return output;
+    };
+    document.write(student.toString()+'<br/>');
+    document.write(student+'<br/>');
+    delete(student.장래희망);   // 객체의 속성 제거
+    document.write(student+'<br/>');*/
+    
+    /* 6. 생성자 함수 */
+    // - new 키워드를 사용해 객체를 생성할 수 있는 함수
+    // - 생성자 함수를 사용한 객체의 생성과 출력
+    // - 그냥 함수를 사용해 객체를 리턴하는 방법과 차이가 없는 것이 특징입니다.
+    // - 일반 함수를 만들되, 내부 변수 및 메서드에 this를 붙여서 생성
+    function Student(name, korean, math, english, science){
+        this.name = name;
+        this.kor = korean;
+        this.math = math;
+        this.english = english;
+        this.science = science;
+        
+        this.getSum = function(){
+            return this.kor + this.math + this.english + this.science;
+        },
+        this.getAvg = function(){
+            return this.getSum() / 4;
+        },
+        this.toString = function(){
+            return this.name+' : '+this.getSum()+', '+this.getAvg();
+        }
+    }
+    var std1 = new Student('홍길동', 85, 98, 74, 56);
+    document.write(std1);
+    
+    // 생성자를 사용하지 않은 객체로 배열의 요소를 구성
+    var stds = [];  // 비어있는 배열 생성
+    var obj = { // 한 개의 객체 생성(생성자 함수 사용하지 않음)
+        name : '홍길동',
+        kor:85,
+        math:98,
+        english:74,
+        science:56, 
+        getSum : function(){
+            return this.kor + this.math + this.english + this.science;
+        },
+        getAvg : function(){
+            return this.getSum() / 4;
+        },
+        toString : function(){
+            return this.name+' : '+this.getSum()+', '+this.getAvg();
+        }
+    };
+    stds.push(obj); // 생성된 객체를 배열의 요소로 삽입
+    var obj1 = new Student('홍길동', 85, 90, 95, 100);
+    stds.push(obj1);
+    stds.push(new Student('홍길서', 75, 80, 65, 90));
+    stds.push(new Student('홍길남', 80, 95, 75, 80));
+    stds.push(new Student('홍길북', 85, 60, 85, 70));
+    stds.push(new Student('김길동', 65, 60, 75, 80));
+    stds.push(new Student('이길동', 75, 95, 85, 90));
+    stds.push(new Student('박길동', 90, 80, 75, 90));
+    
+    var output = ' 이름       총점          평균\n'
+    for(var i in stds) output += stds[i].toString()+'<br/>';
+    document.write(output);
+    output='';
+    for(var i in obj1) output += i+":"+obj1[i]+'<br/>';
+    document.write(output);
+   
+</script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- 
+	* border(테두리) 속성
+		- border-width 속성
+			. 테두리의 너비를 지정하는 스타일 속성
+			. 크기단위 : border-left[top/right/bottom]-width
+			. 키워드 : medium/thick/thin/...
+		- border-style 속성
+			. 테두리의 형태를 지정하는 스타일 속성
+			. border-left[top/right/bottom]-style
+		- border-color 속성
+			. border-left[top/right/bottom]-color
+		- border-radius 속성
+			. CSS3에서 추가된 속성
+			. 테두리가 둥근 사각형 또는 원을 만들 수 있다 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Border</title>
+<style type="text/css">
+	.box1{width:500px;height:80px;
+		border-left-color:green;
+		border-right-color:red;
+		border-top-color:black;
+		border-bottom-color:#0000FF;	/* 파란색 */
+		
+		border-left-width:thin;
+		border-right-width:15px;
+		border-top-width:thick;
+		border-bottom-width:20px;
+		
+		border-left-style:solid;
+		border-right-style:double;
+		border-top-style:dotted;
+		border-bottom-style:dashed;
+	}
+	.box2{width:400px;height:150px;
+		border:5px solid blue;
+		/*border-radius:30px;	 px, %로 표현 가능 */
+		border-radius:30px 10px 50px 20px;
+		/* border에 의한 선굵기는 div 또는 박스모델의 전체 크기에 합산되어 관여합니다. */
+	}
+</style>
+</head>
+<body>
+<div class="box1"><h1>Lorem ipsum dolor amet</h1></div>
+<br />
+<div class="box2"><h1>Lorem ipsum dolor amet</h1></div>
+</body>
+</html>

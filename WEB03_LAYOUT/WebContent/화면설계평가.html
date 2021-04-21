@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>화면설계평가</title>
+<style type="text/css">
+    #back{width:600px; height:1100px; border:1px solid silver; margin:0 auto;}
+    #back_1{width:500px; height:900px; border:0px; margin:50px 50px; }
+    
+    #logo{width: 300px; height:150px; margin:0 auto; text-align:center; line-height:150px; }
+    
+    #main_title{width:100%; height:150px; line-height:100px; }
+    
+    .title{position:relative; width:100%; height:60px; text-align:left; line-height:40px; ; float:left;}
+    #text{position:relative; width:100%; height:30px; border-bottom:5px solid red; font-size:120%; float:left;}
+    .text1{position:relative; width:100%; height:30px; font-size:120%; border-bottom:3px solid silver; float:left;}
+    #id1{font-size:110%; border:0px; outline:none;}
+    #id2{position:relative; font-size:110%; border:0px; outline:none; float:left;}
+    
+    #p_number{position:relative; float:left; border:0px; outline:none; text-align:left;}
+    #block1{position:relative; float:left; width:70px; height:100%;}
+    #block2{position:relative; width:50px; height:10px; border:1px solid black;}
+    
+    .box{position:relative; width:100%; height:70px; float:left; margin:0 auto; line-height:70px;}
+    
+    #button{position:relative; width:150px; height:50px; border-radius:50px; font-weight:bold; line-height:50px; text-align:center;  font-size:110%; background:white; border:2px solid silver; float:right;}
+    .ymd{width:70px; height:30px; float:left; text-align:center; border:1px solid black; margin-right:40px; font-size:105%; font-weight:bold; color:black; border:0;}
+    
+    .ccheck input[type="checkbox"] {display:none;}
+    .ccheck label{width:70px; height:10px; float:right;}
+    
+    .ccheck input[type="checkbox"] + label 
+    .chk_img {padding:0 0 0 30px; height:20px; background:url(images/check2.jpg)no-repeat;
+	cursor:pointer;}
+    .ccheck input[type="checkbox"]:checked + label .chk_img {background:url("images/check1.jpg")no-repeat;}
+    
+    
+    
+    input[type=submit]{width:400px; height:100px; margin:50px; font-size:110%; font-weight:bold;}
+    #sb:hover{width:400px; height:100px; margin:50px; font-size:110%; background:gray;}
+    
+    
+</style>
+</head>
+<body>
+<div id="logo"><img src="images/logo.jpg"></div>
+<div id="back">
+<div id="back_1">
+    <div id="main_title"><h2>카카오계정 정보를 입력해주세요</h2></div>
+    <div class="title"><h4>카카오 계정 이메일</h4></div>
+    <div id="text"><input type="text" id="id1" size=25>&nbsp;&nbsp;@kakao.com</div>
+    <div class="title"><h4>비밀번호</h4></div>
+    <div class="text1"><input type="password" id="id1" size="35" placeholder="비밀번호(8~32자리)"></div>
+    <br/>
+    <div class="text1"><input type="password" id="id1" size="35" placeholder="비밀번호 재입력"></div>
+    <div class="title"><h4>닉네임</h4></div>
+    <div class="text1"><input type="text" id="id1" size=25 placeholder="닉네임을 입력해주세요."></div>
+    <br />
+    <div class="title"><h4>전화번호</h4></div>
+        <div class="text1">
+           <span>
+            <div id="block1" stlye="border-right:1px;">
+               <select name="number" id="id2" width="70">
+                <option value="1">+82</option>
+                <option value="2">+1</option>
+                <option value="3">+81</option>
+                <option value="4">+63</option>
+                </select>
+            </div>
+            <input type="text" id="id1" size="33" placeholder="전화번호">
+            </span>
+        </div>
+    <div class="box">
+        <div id="button">인증번호 전송</div>
+    </div>
+    <div class="title"><h4>생일/성별</h4></div>
+        <div class="text1">
+           <span>
+            <select name="year" class="ymd">
+                <option value="연도">연도</option>
+                <option value="1">2006</option>
+                <option value="2">2005</option>
+                <option value="3">2004</option>
+                <option value="4">2003</option>
+                <option value="5">2002</option>
+            </select>
+            <select name="month" class="ymd">
+                <option value="월">월</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <select name="day" class="ymd">
+                <option value="일">일</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            
+            <div class="ccheck">
+                <input type="checkbox" id="check">
+                <label for="check">
+                <div class="chk_img">음력</div>
+                </label>
+            </div>                  
+            </span>    
+        </div>
+        <div class="box">
+            <input type="radio" id="rd1" value="" name="radio">
+            <label for="rd1" class="r">선택안함</label>
+            
+            <input type="radio" id="rd2" value="" name="radio">
+            <label for="rd2" class="r">남성</label>
+            
+            <input type="radio" id="rd2" value="" name="radio">
+            <label for="rd2" class="r">여성</label>
+        </div>
+        
+        <input type="submit" id="sb" value="다음">
+            
+    
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script type="text/javascript">
+
+/* 
+* 문서 객체모델(DOM, Document Object Model)
+- 넓은 의미 : 웹브라우저가 HTML 페이지를 인식하는 방식
+- 좁은 의미 : document 객체와 관련된 객체의 집합
+- HTML 페이지에 태그를 추가, 수정, 제거할 수 있습니다.
+- 기본적인 자바스크립트 만으로 DOM을 다루기에는 너무 복잡하므로, 간단한 내용만 살펴보고 자세한 내용은 jQuery에서 확인합니다.
+
+* DOM 관련용어
+- 문서 객체 : html or body 태그를 자바스크립트에서 이용할 수 있는 개체로 만들면 그것이 문서객체
+- 노드 : 각 요소 (head, body, title, script, h1, HEADER, ...)
+    . 요소노드(Element Node) : HTML 태그
+    . 텍스트노드(Text Node) : 요소노드 안에 들어있는 글자
+- 정적으로 문서 객체를 생성한다의 의미
+    : 웹피이지가 처음 HTML 페이지에 적혀있는 태그들을 읽으며 생성하는 것
+- 동적으로 문서 객체를 생성한다의 의미
+    : 자바스크립트를 사용해 원래 HTML 페이지에는 없는 문서 객체를 생성하는 것*/
+
+// 문서 객체 내용 변경
+function changeHeader1(){
+    var header = document.getElementById("header_1");
+    header.innerHTML = "펭귄";
+    // document.getElementById("header_1").innerHTML = "펭귄
+}
+function changeHeader2(){
+    var header = document.getElementById("header_1");
+    header.innerHTML = "코알라";
+}
+    
+function createE(){
+    //1. 문서 객체 생성
+    var header = document.createElement('h2'); //<h2></h2> 태그 생성
+    var textNode = document.createTextNode('Hello DOM'); //문자생성
+    // 2. 노드(요소/텍스트)를 연결
+    header.appendChild(textNode); // 태그안에 문자 삽입
+    // 3. body 문서 객체에 header 문서 객체를 추가
+    document.body.appendChild(header); // body에 생성된 태그 삽입
+}
+// 텍스트 노드를 갖지 않는 노드 생성(이미지 태그 등)
+function createImg(){
+    var img = document.createElement('img');
+    img.src = 'images/Tulips.jpg';
+    img.width = 300;
+    document.body.appendChild(img);
+}
+
+// 문서 객체의 innerHTML 속성을 사용해 객체 생성
+function createUl(){
+    var output='';
+    output += '<ul>';
+    output += '<li>JavaScript</li>';
+    output += '<li>jQuery</li>';
+    output += '<li>Ajax</li>';
+    output += '<ul>';
+
+    document.body.innerHTML += output;
+}
+
+// 문서객체 가져오기1 - 웹페이지에 이미 존재하는 HTML 태그를 스크립트로 가져오는 방법
+// - getElementById() 메서드는 한 번에 한 가지 문서 객체만 가져올 수 있습니다.
+function getDom(){ // id값을 이용해서 문서 객체를 가져옴
+    var header1 = document.getElementById('header_1');
+    var header2 = document.getElementById('header_2');
+    // 문서 객체의 속성을 변경.
+    header1.innerHTML = 'getElementByID()';
+    header2.innerHTML = 'Hello JavaScript';
+}
+// 문서 객체 가져오기2
+// - getElementsByTagName('tagName') : tagName과 일치하는 문서객체를 배열로 가져옵니다.
+function getDom2(){
+    var headers = document.getElementsByTagName('h1');
+    headers[0].innerHTML = 'getElementsByTagName()';
+    headers[1].innerHTML = 'TagName-h2';
+}
+// - getElementsByName(name) : 태그의 name 속성이 name과 일치하는 문서 객체를 배열로 가져옵니다
+// - getElementsByClassName('className') : 태그의 class 속성과 일치하는 문서 객체를 배열로 가져옵니다.
+
+function changeStyle(){
+    var header = document.getElementById('header_1');
+    header.style.border = '1px solid black';
+    // document.getElementById('header_1').style.border = '1px solid black';
+    header.style.color = 'orange';
+    header.style.backgroundColor = 'yellow';
+}
+
+</script>
+</head>
+<body>
+<h1 id="header_1">HEADER-1</h1>  
+<img src="images/Penguins.jpg" width="300">  
+<div><h1 id="header_2" class="" name="">HEADER-2</h1></div>
+<h1 id="clock"></h1>
+<input type="button" value="제목변경1" onclick="changeHeader1();"/>
+<input type="button" value="제목변경2" onclick="changeHeader2();"/>
+<input type="button" value="문서객체생성1" onclick="createE();"/>
+<input type="button" value="문서객체생성2" onclick="createImg();"/>
+<input type="button" value="문서객체생성3" onclick="createUl();"/><br/>
+<input type="button" value="문서객체가져오기1" onclick="getDom();"/>
+<input type="button" value="문서객체가져오기2" onclick="getDom2();"/>
+<input type="button" value="문서객체스타일조작" onclick="changeStyle();"/>
+<input type="button" value="문서객체제거" onclick="removeDom();"/>
+<input type="button" value="날짜시간표시" onclick="viewDataTme();"/>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    #base{position:relative; width:500px; height:300px; border:1px solid black;}
+    #title{position:absolute; width:100px; height:30px; border:1px solid gray; left:150px; top:50px; font-size:120%; line-height:30px; font-weight:bold;}
+    #num{float:left; width:80px; height:30px;}
+    #arrow{float:right; width:20px; height:30px; background-image:url(images/ico_movie_171115.png); background-position:-280px -320px;}
+    #dropmenu{position:absolute; width:200px; height:250px; top:80px; left:150px; border:1px solid silver; background:white; box-shadow:2px 2px 5px gray; overflow:scroll; visibility:hidden; /*= display:none;*/}
+    #dropmenu div{font-weight:bold; height:45px; line-height:45px; padding-left:15px;}
+    #dropmenu div:hover{background:#CCCCCC}
+</style>
+<script type="text/javascript">
+    var Mstate=0;
+    function titleClick(){ // 메뉴가 열려있으면 닫고, 닫혀있으면 여는 동작
+        if(Mstate == 0){
+            viewMenu();
+        }else{
+            hideMenu();
+        };
+    }
+    function selectMenu(n){   // 메뉴 닫고, 전달된 n 값은 num 태그내용으로 치환
+    document.getElementById("num").innerHTML = '+'+ n;
+    hideMenu();
+    }
+    
+    function hideMenu(){   // 메뉴 감춤
+        document.getElementById("dropmenu").style.visibility='hidden';
+        Mstate=0;
+    }
+    function viewMenu(){   // 메뉴 오픈
+        document.getElementById("dropmenu").style.visibility='visible';
+        Mstate=1;
+    }
+
+</script>
+</head>
+<body>
+<div id="base">
+    <div id="title" onClick="titleClick()">
+        <div id="num">+82</div>
+        <div id="arrow"></div>
+    </div>
+    <div id="dropmenu" onmouseout="hideMenu();" onmouseover="viewMenu();">
+        <div onclick="selectMenu(1)">+1&nbsp;&nbsp;&nbsp;Canada</div>
+        <div onclick="selectMenu(1)">+1&nbsp;&nbsp;&nbsp;United States</div>
+        <div onclick="selectMenu(63)">+63&nbsp;&nbsp;&nbsp;Philippines</div>
+        <div onclick="selectMenu(62)">+62&nbsp;&nbsp;&nbsp;Indonesia</div>
+        <div onclick="selectMenu(84)">+84&nbsp;&nbsp;&nbsp;Vietnam</div>
+        <div onclick="selectMenu(55)">+55&nbsp;&nbsp;&nbsp;Brazil</div>
+        <div onclick="selectMenu(86)">+86&nbsp;&nbsp;&nbsp;China</div>
+        <div onclick="selectMenu(85)">+85&nbsp;&nbsp;&nbsp;HongKong</div>
+        <div onclick="selectMenu(82)">+82&nbsp;&nbsp;&nbsp;Korea</div>
+    </div>
+</div>
+
+
+<br/><br/><br/><br/>
+<select>
+    <option>+1 Canada</option>
+    <option>+1 United States</option>
+    <option>+63 Philippines</option>
+    <option>+82 Republic of Korea</option>
+</select>
+</body>
+</html>

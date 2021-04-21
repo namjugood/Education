@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    span{color:red; cursor:pointer;}
+    div{margin:3px; width:100px; display:none; height:100px; float:left;}
+    div#red{background:#ff0000; }
+    div#green{background:#00ff00; }
+    div#blue{background:#0000ff; }
+</style>
+<script src="script/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('#fin').click(function(){
+        $('div').fadeIn(2000);
+    });
+    $('#fout').click(function(){
+        $('div').fadeOut(2000);
+    });
+    $('#fToggle').click(function(){
+        $('div').fadeToggle(2000);
+    });
+});        
+</script>
+</head>
+<body>
+<span id="fin">페이드 인</span>&nbsp;&nbsp;&nbsp;
+<span id="fout">페이드 아웃</span>&nbsp;&nbsp;&nbsp;    
+<span id="fToggle">페이드 토글</span>&nbsp;&nbsp;&nbsp; <br><br><br><br>
+<div id="red"></div>  
+<div id="green"></div>  
+<div id="blue"></div>  
+</body>
+</html>

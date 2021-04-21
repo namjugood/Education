@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- 
+	* 폰트 속성 : 글자와 관련된 스타일 속성
+		1. font-size 속성
+			- 글자의 크기를 지정하는 스타일 속성. 참고) h1태그:32px, p태그:16px 
+		2. font-family 속성(사용에 애로사항이 있음, 상대방 pc에 해당글꼴이 없으면 출력이 안되는 문제가 있음)
+			- 폰트를 지정하는 스타일 속성.
+			- 일반적으로 한 단어로 이루어진 폰트는 따옴표를 사용하지 않음. 하지만 두 단어 이상으로 이루어진 단어는
+			  따옴표를 반드시 적용.
+		3. font-style 속성
+			- 폰트의 기울기를 지정하는 스타일 속성.
+			- 키워드 : Italic 등
+		4. font-weight 속성
+			- 폰트의 두께를 지정하는 스타일 속성.
+			- 키워드 : 700/800/900/bold/....
+			- 일반 폰트 두께 : 400, 두꺼운 폰트 두께 : 700
+			- 두께를 지원하지 않는 폰트는 font-weight 속성을 사용해 두께를 조절할 수 없다.
+		5. line-height 속성
+			- 글자의 높이를 지정, 글자를 수직 중앙 정렬할 때 사용.
+		6. text-align 속성 : 글자의 정렬과 관련된 스타일 속성.
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Font</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style type="text/css">
+	.font_arial{font-family:Arial,sans-serif;}
+	.font_roman{font-family:'Times New Roman', serif;}
+	.font_gulim{font-family: 굴림;}
+	.font_hangul{font-family: 'Nanum Pen Script', cursive;}
+	
+	.font_big{font-size:2em;}
+	.font_italic{font-style:italic;}
+	.font_bold{font-weight:bold;}
+	
+	a{font-weight:bold; text-decoration:none; color:white;}
+	/* text-decoration:none -> 밑줄 등의 스타일을 없앱니다. 주로 앵커태그 밑줄을 없앨 때 많이 사용합니다. */
+	
+	.button{width:150px; height:70px; background:#FF6A00; border:10px solid white;
+				text-align:center; line-height:70px; font-size:200%; box-shadow:5px 5px 5px #555555;
+				text-shadow:2px 2px 2px #333333; border-radius:30px;}
+	/* box-shadow : 박스의 그림자 효과		첫 번째 요소 : 좌우 그림자 크기, 두 번째 요소 : 상하 그림자 크기,
+		세 번째 요소 : 번짐 정도,	네 번째 요소 : 그림자 색깔, 박스섀도우가 아닌 text에도 text-shadow를 똑같은
+		방법으로 넣을 수 있습니다. 
+		line-height와 height가 같으면 도형안의 글자를 가운데 정렬할 수 있음*/
+	input[type=button]{width:170px; height:90px; background:#FF6A00; border:10px solid white;
+			text-align:center; font-size:200%; box-shadow:5px 5px 5px #555555; text-shadow:2px
+			2px 2px #333333; border-radius:30px; color:white; font-weight:bold;}
+	
+</style>
+</head>
+<body>
+
+<h1 class="font_arial">Lorem ipsum</h1>
+<h1 class="font_roman">Lorem ipsum</h1>
+<h1 class="font_gulim">Lorem ipsum</h1>
+<h1 class="font_hangul">가나다라마바사아자차카타파하</h1>
+<p class="font_italic font_big font_bold">Lorem ipsum dolor amet</p>
+<!-- css로 버튼 생성 -->
+<div class="button"><a href="#">Click</a></div>
+<br />
+<hr />
+<input type="button" value="Click"/>
+</body>
+</html>

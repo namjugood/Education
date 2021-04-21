@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- 
+	* 박스모델 구성요소
+		- padding : 박스내부의 구성내용(이미지, 텍스트 등)과 border사이의 공간
+		- border : 외곽선
+		- margin : 외곽선과 다른 개체사의 공간 
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BoxModel</title>
+<style type="text/css">
+	.box{width:170px;height:100px;border:10px solid blue; margin-bottom:30px;
+	padding-left:30px;padding-top:30px;}
+	/* border와 padding 값은 전체 크기에 합산됩니다. 따라서 .box의 실제크기는
+	width:250px, height:180px로 봐야합니다 */
+</style>
+</head>
+<body>
+<div class="box">박스모델1</div>
+<div class="box">박스모델2</div>
+</body>
+</html>

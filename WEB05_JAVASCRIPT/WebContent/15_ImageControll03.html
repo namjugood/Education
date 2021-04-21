@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    #base{position:relative; width:170px; height:255px; border:1px solid blue; margin:0 auto; overflow:hidden;}
+    #imgs{position:absolute; width:850px; height:255px; left:0; top:0px; border:1px dashed red; transition:1s; }
+</style>
+<script type="text/javascript">
+   var num=0;
+    function Roll(){
+        if(num>4) num=0;
+        var dist = -1*num*170;   document.getElementById("imgs").style.left=dist+"px";
+        num++;
+    }
+   setInterval(Roll, 1000);
+</script>
+</head>
+<body>
+<div id="base">
+    <div id="imgs">
+        <img src="images/1.jpg"><img src="images/2.jpg"><img src="images/3.jpg"><img src="images/4.jpg"><img src="images/5.jpg">
+    </div>
+</div>    
+</body>
+</html>

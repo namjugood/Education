@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    span{font-size:180%; font-weight:bold; display:none;}    
+</style>
+<script src="script/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    $(function(){
+       // 현재 과제 : 버튼을 클릭하면 display:none으로 설정되어 화면에 보이지 않는 span 태그를 화면에 보이게 합니다.
+    
+       //$('button').eq(0).on('click',function(){}); 
+       // 선택된 객체에 이벤트(click)이 발생하면 function(){}에 써 넣은 명령을 실행합니다.
+       $('button:eq(0)').click(function(){
+           // 선택된 객체가 함수의 종류에 따라 동작하게 합니다.
+           //여기서 동작은 .show() .hide() 등이 있습니다.
+           $('span:first').show();
+       });
+       $('button:eq(1)').click(function(){
+           $('span:first').hide();
+       });
+        
+       $('button:eq(2)').click(function(){
+           $('span:last').show(2000);
+       })
+       $('button:eq(2)').click(function(){
+           $('span:last').hide(2000);
+       })
+    });
+</script>
+</head>
+<body>
+<button>Show It</button>    <!--버튼을 만드는 또 다른 방법-->
+<button>Hide It</button>
+<span>안녕하세요.</span>
+<br>
+<button>Show It slow</button>
+<button>Hide it slow</button>
+<span>반갑습니다.</span>
+</body>
+</html>

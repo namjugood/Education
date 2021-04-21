@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    #base{position:relative; width:600px; height:400px; margin:0 auto; border:1px dashed black; overflow:hidden;}
+    #imgs{position:absolute; width:4800px; height:400px; left:0px; top:0px; border:1px dashed red; overflow:hidden; transition-duration:1s; }
+    img{width:600px;}
+    #remot{position:absolute; width:200px; height:50px; border:1px solid white; bottom:0px; left:200px;}
+    .btn{position:relative; float:left; width:14px; height:14px; margin:5px; border-radius:7px; background:white; margin-top:18px;}
+</style>
+<script type="text/javascript"> 
+    function move(n){
+        var k=-1*n*600;
+        document.getElementById("imgs").style.left=k+"px";
+    }
+</script>
+</head>
+<body style="overflow-x:hidden;">
+<div id="base">
+    <div id="imgs"><img src="images/Koala.jpg" ><img src="images/Chrysanthemum.jpg"><img src="images/Desert.jpg"><img src="images/Hydrangeas.jpg"><img src="images/Jellyfish.jpg"><img src="images/Lighthouse.jpg"><img src="images/Penguins.jpg"><img src="images/Tulips.jpg"></div>
+    
+    <div id="remot">
+        <div class="btn" onClick="move(0);"></div><div class="btn" onClick="move(1);"></div>
+        <div class="btn" onClick="move(2);"></div><div class="btn" onClick="move(3);"></div>
+        <div class="btn" onClick="move(4);"></div><div class="btn" onClick="move(5);"></div>
+        <div class="btn" onClick="move(6);"></div><div class="btn" onClick="move(7);"></div>
+    </div>
+</div>
+    
+</body>
+</html>

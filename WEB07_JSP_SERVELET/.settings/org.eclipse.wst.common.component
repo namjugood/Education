@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="WEB07_JSP_SERVELET">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="WEB07_JSP_SERVELET"/>
+        <property name="java-output-path" value="/WEB07_JSP_SERVELET/build/classes"/>
+    </wb-module>
+</project-modules>

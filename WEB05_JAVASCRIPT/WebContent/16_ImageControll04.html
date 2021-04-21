@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    #base{position:relative; width:170px; height:255px; border:1px solid blue; overflow:hidden;}
+    .imgs{position:absolute; top:0; left:0; opacity:0; transition:1s;}
+    #view{opacity:1;}
+</style>
+<script type="text/javascript">
+/* setInterval이 특정 함수를 호출할 때마다 함수는 다섯개의 div중 하나만 opacity로, 나머지는 0으로 설정합니다. 반복실행문 이용 */
+    var num=0;
+    function changeOpacity(){
+        num++;
+        if(num>5) num=1;
+        
+        for(var i=1; i<=5; i++){
+            var s="view"+i;
+            if(i==num)document.getElementById(s).style.opacity='1';
+            else document.getElementById(s).style.opacity='0';
+        }
+    }
+    setInterval("changeOpacity()", 1000);
+</script>
+</head>
+<body>
+<div id="base">
+    <div class="imgs" id="view1"><img src="images/1.jpg"></div>
+    <div class="imgs" id="view2"><img src="images/2.jpg"></div>
+    <div class="imgs" id="view3"><img src="images/3.jpg"></div>
+    <div class="imgs" id="view4"><img src="images/4.jpg"></div>
+    <div class="imgs" id="view5"><img src="images/5.jpg"></div>
+</div>    
+</body>
+</html>

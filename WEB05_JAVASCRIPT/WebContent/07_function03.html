@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script type="text/javascript">
+    /* 함수의 재정의
+    1. 익명함수의 재정의*/
+    var func = function(){
+        alert('익명함수1')
+    }
+    func(); // 익명함수1 호출
+    var func = function(){
+        alert('익명함수2');
+    } // 익명함수의 재정의
+    func(); // 익명함수2 호출
+    
+    //2. 선언적 함수의 재정의
+    function move(){alert('move() 함수 호출.'); }
+    move(); //move() 함수2 호출
+    function move(){alert('move() 함수1 호출.'); } // 함수의 재정의
+    move(); //move() 함수2 호출
+    function move(){alert('move() 함수2 호출.'); } // 함수의 재정의
+    move(); //move() 함수2 호출
+    
+    // 익명함수든 선언적함수든 자바스크립트의 함수는 필요에 따라 같은 이름으로 위와 같이 재정의되어 사용이 가능합니다.
+    // 익명함수는 재정의되어 변수에 할당될 때마다 내용이 갱신됩니다.
+    // 웹 브라우저는 script태그 내부의 내용을 읽기 전에 선언적함수를 먼저 읽습니다.
+    // 선언적함수는 스크립트 태그 내에서 먼저 읽고 시작되기 때문에 가장 마지막으로 정의된 함수의 내용이 해당 함수 이름으로 정의되고 시작합니다.
+    // 따라서 위 코드의 세 번의 move()함수호출 명령은 모두 'move() 함수2 호출' 내용을 출력합니다.
+</script>
+</head>
+<body>
+    
+</body>
+</html>

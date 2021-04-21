@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    #tabs{position:relative; margin:0 auto; width:1080px; height:40px; margin-top:100px;}
+    #tablist{list-style:none; padding:0px; margin:0px; }
+    #tablist li{width:178px; height:40px; float:left; line-height:40px; text-align:center; border-radius:10px 10px 0px 0px; font-size:90%;}
+    .content{position:absolute; width:1080px; height:440px; left:0px; top:0px; line-height:440px; text-align:center; font-size:120%}
+    #contents{position:relative; margin:0 auto; width:1080px; height:440px;}
+    #content1{background:#ebaa55;}
+    #content2{background:#55ebd1; display:none;}
+    #content3{background:#4fbde3; display:none;}
+    #content4{background:#6ebe6d; display:none;}
+    #content5{background:#95a096; display:none;}
+    #content6{background:#ed8d2a; display:none;}
+    
+</style>
+<script src="script/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('#tablist li:eq(0)').css('background-color','#ebaa55' );
+    $('#tablist li:eq(1)').css('background-color','#55ebd1' );
+    $('#tablist li:eq(2)').css('background-color','#4fbde3' );
+    $('#tablist li:eq(3)').css('background-color','#6ebe6d' );
+    $('#tablist li:eq(4)').css('background-color','#95a096' );
+    $('#tablist li:eq(5)').css('background-color','#ed8d2a' );
+    
+    $('#tablist li').click(function(){
+        var idx=$(this).index(); // 현재 클릭된 li의 인덱스를 얻습니다.
+        var oname = "#content"+(idx+1); // 화면에 보여줄 #content X와 같이 이름을 조합
+        for(var i=0;i<=5;i++){
+            var s = '#content'+(i+1);
+            $(s).hide();
+        }   // 여섯 개 모두 감춤
+        $(oname).show();    // 클릭된 객체 보여줌
+    });
+});
+</script>
+</head>
+<body>
+<div id="tabs">
+    <ul id="tablist">
+        <li id="tab1">Menu A</li>
+        <li id="tab2">Menu B</li>
+        <li id="tab3">Menu C</li>
+        <li id="tab4">Menu D</li>
+        <li id="tab5">Menu E</li>
+        <li id="tab6">Menu F</li>
+    </ul>
+</div>
+<div id="contents">
+    <div class="content" id="content1">Content A</div>
+    <div class="content" id="content2">Content B</div>
+    <div class="content" id="content3">Content C</div>
+    <div class="content" id="content4">Content D</div>
+    <div class="content" id="content5">Content E</div>
+    <div class="content" id="content6">Content F</div>
+</div>        
+</body>
+</html>

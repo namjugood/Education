@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    div{background:#3d9a44; margin:3px; width:80px; height:100px; float:left;}
+</style>
+<script src="script/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //$('button:eq(0)').click()
+        $('#slideUp').click(function(){
+            $('div').slideUp();
+        });
+        $('#slideDown').click(function(){
+            $('div').slideDown();
+        });
+        $('#slideToggle').click(function(){
+            $('div').slideToggle();
+        });
+    });
+</script>
+</head>
+<body>
+<button id="slideUp">slideup</button>
+<button id="slideDown">slideDown</button>
+<button id="slideToggle">slideToggle</button>    
+<br><br><br>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>
